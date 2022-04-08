@@ -1,0 +1,87 @@
+PODS:
+  - Alamofire (4.9.0)
+  - BlueCryptor (1.0.32)
+  - BlueECC (1.2.5)
+  - BlueRSA (1.0.34)
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
+  - iOSDropDown (0.3.4)
+  - JWTDecode (2.3.1)
+  - KituraContracts (1.2.1):
+    - LoggerAPI (~> 1.7)
+  - LoggerAPI (1.9.0):
+    - Logging (~> 1.1)
+  - Logging (1.1.1)
+  - lottie-ios (2.5.3)
+  - PhoneNumberKit (3.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.1.0)
+    - PhoneNumberKit/UIKit (= 3.1.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.1.0)
+  - PhoneNumberKit/UIKit (3.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - SwiftJWT (3.5.3):
+    - BlueCryptor (~> 1.0)
+    - BlueECC (~> 1.1)
+    - BlueRSA (~> 1.0)
+    - KituraContracts (~> 1.1)
+    - LoggerAPI (~> 1.7)
+  - SwiftMessages (7.0.1):
+    - SwiftMessages/App (= 7.0.1)
+  - SwiftMessages/App (7.0.1)
+  - SwiftSignatureView (2.2.2)
+  - TinyConstraints (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - Charts
+  - iOSDropDown
+  - JWTDecode (~> 2.3)
+  - lottie-ios (~> 2.5.0)
+  - PhoneNumberKit (~> 3.1)
+  - SwiftJWT
+  - SwiftMessages
+  - SwiftSignatureView
+  - TinyConstraints
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - BlueCryptor
+    - BlueECC
+    - BlueRSA
+    - Charts
+    - iOSDropDown
+    - JWTDecode
+    - KituraContracts
+    - LoggerAPI
+    - Logging
+    - lottie-ios
+    - SwiftJWT
+    - TinyConstraints
+  trunk:
+    - PhoneNumberKit
+    - SwiftMessages
+    - SwiftSignatureView
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  BlueCryptor: b0aee3d9b8f367b49b30de11cda90e1735571c24
+  BlueECC: 0d18e93347d3ec6d41416de21c1ffa4d4cd3c2cc
+  BlueRSA: 6f9776d62d9773502415a7db3bcbb2bbb3f71fc3
+  Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  JWTDecode: 222f79e3df85a3b02028822fca950058961460e6
+  KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
+  LoggerAPI: fb78461eedac5316b290f2404d88b9d614d96c57
+  Logging: c1d514914944d786e0f17a41a6431e44a88a7ec1
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  PhoneNumberKit: adffe4e128af1918386e09e7421d3d851a2987af
+  SwiftJWT: 9a47a71090cae25767078756b5810e3b630aa9a7
+  SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
+  SwiftSignatureView: 7c163f7b3d394d5db060a0ae1080ff8bc4c25c4e
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
+
+PODFILE CHECKSUM: 1638e1d1e1029232f854650f65db7428c9fbccc6
+
+COCOAPODS: 1.8.4

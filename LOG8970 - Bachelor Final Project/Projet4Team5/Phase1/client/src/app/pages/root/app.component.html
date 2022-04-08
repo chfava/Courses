@@ -1,0 +1,26 @@
+<ion-app>
+    <ion-menu side="start" (ionWillOpen)="openMenu()">
+        <ion-header>
+            <ion-img src="../../../assets/logos/name.png" padding-top></ion-img>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-menu-toggle auto-hide="false" *ngFor="let menu of menuPages">
+                    <ion-item [routerDirection]="'root'" [routerLink]="[menu.url]">
+                        <ion-icon slot="start" [name]="menu.icon"></ion-icon>
+                        <ion-label>
+                            {{menu.title}}
+                        </ion-label>
+                    </ion-item>
+                </ion-menu-toggle>
+            </ion-list>
+        </ion-content>
+        <ion-footer>
+            <ion-menu-toggle auto-hide="false">
+                <ion-button color="danger" (click)="onLogout()">Déconnexion</ion-button>
+            </ion-menu-toggle>
+        </ion-footer>
+    </ion-menu>
+
+    <ion-router-outlet main></ion-router-outlet>
+</ion-app>

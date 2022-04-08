@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{employee.Name}}</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="closeModal()" color="danger" *ngIf="!isSubmitted">Fermer</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">
+                    <form [formGroup]="employeeUpdatePasswordForm" padding (keydown.enter)="changePassword()">
+                        <ion-item>
+                            <ion-label position="stacked">Nouveau mot de passe</ion-label>
+                            <ion-input formControlName="password"></ion-input>
+                        </ion-item>
+                        <ion-button (click)="changePassword()" [disabled]="!employeeUpdatePasswordForm.valid || isSubmitted"
+                            color="primary" expand="block" margin>
+                            Mettre à jour le mot de passe
+                        </ion-button>
+                    </form>
+
+                    <form *ngIf="isCurrentUserOpenedModal" [formGroup]="employeeUpdateClinicForm" padding (keydown.enter)="changeClinic()">
+                        <ion-item>
+                            <ion-label position="stacked">Nouvelle clinique</ion-label>
+                            <ion-select *ngIf="clinics" formControlName="clinic">
+                                <ion-select-option *ngFor="let clinic of clinics" [value]="clinic.Id">{{clinic.Name}}</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-button (click)="changeClinic()" [disabled]="!employeeUpdateClinicForm.valid || isSubmitted"
+                            color="primary" expand="block" margin>
+                            Mettre à jour la clinique
+                        </ion-button>
+                    </form>
+                    
+                    <ion-button *ngIf="isCurrentUserOpenedModal" class="delete-button" (click)="presentDeleteEmployeeAlert()" [disabled]="isSubmitted" 
+                        color="danger" expand="block">
+                        Supprimer
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

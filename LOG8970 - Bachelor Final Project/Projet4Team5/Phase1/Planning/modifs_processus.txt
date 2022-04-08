@@ -1,0 +1,13 @@
+développeur = fourre tout
+coordonnateur remplace developpeur
+programmeur/implementeur pour l'implementation
+document d'architecture logicielle absent
+plan de développement logiciel
+plan de tests
+test d'acceptation pas acceptabilité / pas client
+test unitaire cest rien, executer test unitaire
+QA -> testeur de QA ou qqchose
+criteres d'acceptation de UX/UI
+WTF : feedback : utilisateur
+tous les artéfacts demandés doivent être là
+itérations deux semaines pas une

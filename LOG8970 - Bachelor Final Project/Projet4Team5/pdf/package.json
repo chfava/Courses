@@ -1,0 +1,22 @@
+{
+  "name": "pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "tsc main.ts && node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.12.6",
+    "fs": "0.0.1-security",
+    "hummus": "^1.0.107",
+    "hummus-recipe": "^1.8.23",
+    "pdfkit": "^0.10.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
+}

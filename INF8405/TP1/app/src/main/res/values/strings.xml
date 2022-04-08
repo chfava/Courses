@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TP1 - Rush Hour</string>
+    <string name="game_name">Rush Hour</string>
+    <string name="play_button_string">PLAY</string>
+    <string name="about_button_string">About</string>
+    <string name="exit_button_string">Exit</string>
+    <string name="team_members_string">Membres de l\'équipe:\n\n</string>
+    <string name="members_string">Charles-Olivier Favreau\nJulien Gauthier\nFrancis Laframboise</string>
+    <string name="hide_string">Hide</string>
+    <string name="ok_string">OK</string>
+    <string name="puzzle_string">Puzzle</string>
+    <string name="puzzle_number_string">PUZZLE #</string>
+    <string name="moves_string">Moves:\u0020</string>
+    <string name="zero_string">0</string>
+    <string name="record_string">Record:\u0020</string>
+    <string name="unknown_record_string">--</string>
+    <string name="record_puzzle1_string">\u0020/ 15</string>
+    <string name="record_puzzle2_string">\u0020/ 17</string>
+    <string name="record_puzzle3_string">\u0020/ 15</string>
+    <string name="success_title_string">Puzzle Solved!</string>
+    <string name="success_message_string">CLEARED\nYou solved the puzzle!</string>
+</resources>

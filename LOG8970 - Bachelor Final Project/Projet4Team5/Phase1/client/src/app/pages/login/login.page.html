@@ -1,0 +1,28 @@
+<ion-grid>
+    <ion-row justify-content-center>
+        <ion-col align-self-center size-lg="5" size-md="6" size-xs="12">
+            <div class="align-self-center" id="home-logo" padding-top>
+                <ion-img  src="../../../assets/logos/full-logo.png" padding-top></ion-img>
+            </div>  
+            <form [formGroup]="loginForm" padding (keydown.enter)="onSubmit()">
+                <ion-item>
+                    <ion-label position="floating">Nom d'utilisateur</ion-label>
+                    <ion-input formControlName="username" type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Mot de passe</ion-label>
+                    <ion-input formControlName="password" type="password"></ion-input>
+                </ion-item>
+
+                <ion-button
+                        (click)="onSubmit()"
+                        [disabled]="submitted || !loginForm.valid"
+                        color="primary"
+                        expand="block"
+                        margin>
+                    Se connecter
+                </ion-button>
+            </form>
+        </ion-col>
+    </ion-row>
+</ion-grid>

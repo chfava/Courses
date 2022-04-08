@@ -1,0 +1,62 @@
+{
+  "name": "meditrinae-server",
+  "version": "1.0.0",
+  "description": "Meditrinae Application Server",
+  "main": "dist/main.js",
+  "contributors": [
+    "Benjamin Beaudry",
+    "Caroline Sabourin-Jean",
+    "François-Xavier Dueymes",
+    "Gabriel Beaudry",
+    "Mikaël Ferland",
+    "Olivia Gélinas"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "nodemon",
+    "start:debug": "nodemon --config nodemon-debug.json",
+    "prestart:prod": "rimraf dist && npm run build",
+    "start:prod": "node dist/main.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^5.4.0",
+    "@nestjs/core": "^5.4.0",
+    "@nestjs/jwt": "^0.3.0",
+    "@nestjs/microservices": "^5.4.0",
+    "@nestjs/passport": "^5.1.0",
+    "@nestjs/testing": "^5.4.0",
+    "@nestjs/websockets": "^5.4.0",
+    "bcrypt": "^3.0.4",
+    "dotenv": "^7.0.0",
+    "fs": "0.0.1-security",
+    "json2csv": "^4.5.3",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.10",
+    "mongoose-to-csv": "^0.1.1",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^2.6.3",
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/express": "^4.16.0",
+    "@types/mongoose": "^5.3.12",
+    "@types/node": "^10.12.18",
+    "@types/passport": "^1.0.0",
+    "@types/passport-jwt": "^3.0.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.15.3",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.7.0",
+    "tslint": "5.12.1",
+    "typescript": "^3.2.4"
+  }
+}

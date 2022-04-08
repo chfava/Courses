@@ -1,0 +1,12 @@
+.add-medical-exam-button {
+    height: 100%;
+    float: right;
+}
+
+.medical-exam-item {
+    border-left: 8px solid #e4e4e4;
+
+    &.active {
+        border-color: #5Ce1e6;
+    }
+}

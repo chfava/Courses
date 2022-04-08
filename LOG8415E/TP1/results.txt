@@ -1,0 +1,103 @@
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Reading package lists...
+
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+speedtest-cli is already the newest version (2.0.0-1).
+0 upgraded, 0 newly installed, 0 to remove and 45 not upgraded.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+phoronix-test-suite is already the newest version (5.2.1-1ubuntu2).
+0 upgraded, 0 newly installed, 0 to remove and 45 not upgraded.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+bonnie++ is already the newest version (1.97.3).
+0 upgraded, 0 newly installed, 0 to remove and 45 not upgraded.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+hdparm is already the newest version (9.54+ds-1).
+0 upgraded, 0 newly installed, 0 to remove and 45 not upgraded.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+unzip is already the newest version (6.0-21ubuntu1).
+zip is already the newest version (3.0-11build1).
+php-zip is already the newest version (1:7.2+60ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 45 not upgraded.
+
+
+[NOTICE] count(): Parameter must be an array or an object that implements Countable in pts_module:119
+
+Phoronix Test Suite v5.2.1
+An outdated version of the Phoronix Test Suite is installed.
+The version in use is v5.2.1, but the latest is v8.99.99.
+Visit http://www.phoronix-test-suite.com/ to update this software.
+
+    Installed: pts/compress-7zip-1.7.0
+    Installed: pts/compress-gzip-1.2.0
+    Installed: pts/compress-pbzip2-1.5.0
+    Installed: pts/compress-zstd-1.1.1
+    Installed: pts/compress-xz-1.1.0
+
+
+Step 0 - System Specs
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              2
+On-line CPU(s) list: 0,1
+Thread(s) per core:  2
+Core(s) per socket:  1
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               79
+Model name:          Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+Stepping:            1
+CPU MHz:             2300.067
+BogoMIPS:            4600.13
+Hypervisor vendor:   Xen
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            46080K
+NUMA node0 CPU(s):   0,1
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+
+              total        used        free      shared  buff/cache   available
+Mem:           7975         135        6672           0        1167        7568
+Swap:             0           0           0
+
+Step 1 - IO Benchmark
+
+Step 5 - Disk Benchmark
+
+/dev/xvda:
+ Timing cached reads:   18240 MB in  1.99 seconds = 9170.24 MB/sec
+ Timing buffered disk reads: 216 MB in  3.02 seconds =  71.42 MB/sec
+
+Step 6 - Network Benchmark
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (34.203.40.238)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Pilot (Ashburn, VA) [0.98 km]: 1.855 ms
+Testing download speed................................................................................
+Download: 559.72 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.16 Mbit/s
+

@@ -1,0 +1,68 @@
+import subprocess
+
+def single_vm_benchmark():
+    result = subprocess.check_output(['pwd'])
+    """
+    out_file = open('results.txt','w')
+
+    install_tools(out_file)
+    
+    specs(out_file)
+    io_benchmark(5, out_file)
+    cpu_benchmark(5, out_file)
+    iops_benchmark(5, out_file)
+    memory_benchmark(5, out_file)
+    disk_benchmark(5, out_file)
+    network_benchmark(5, out_file)
+
+    out_file.close()
+    """
+
+
+def io_benchmark(n_execs, out_file):
+    for i in range(n_execs):
+        # run_and_save_cmd_res(out_file, 'dd if=/dev/zero of=sb-io-test bs=1M count=1k conv=fdatasync')
+        pass
+
+def cpu_benchmark(n_execs, out_file):
+    for i in range(n_execs):
+        # Timed File Compression (gzip, bzip2, and 7zip)
+        # run_and_save_cmd_res(out_file, 'phoronix-test-suite benchmark pts/compression')
+        pass
+
+def iops_benchmark(n_execs, out_file):
+    for i in range(n_execs):
+        pass
+
+def memory_benchmark(n_execs, out_file):
+    for i in range(n_execs):
+        pass
+
+def disk_benchmark(n_execs, out_file):
+    for i in range(n_execs):
+        pass
+
+def network_benchmark(n_execs, out_file):
+    for i in range(n_execs):
+        pass
+
+def specs(out_file):
+    run_and_save_cmd_res(out_file, 'lscpu')
+    run_and_save_cmd_res(out_file, 'free -m')
+
+
+def install_tools(out_file):
+    run_and_save_cmd_res(out_file, 'sudo apt-get update -y')
+    run_and_save_cmd_res(out_file, 'sudo snap install -y stress-ng')
+    run_and_save_cmd_res(out_file, 'sudo apt install -y speedtest-cli')
+    run_and_save_cmd_res(out_file, 'sudo apt-get install -y phoronix-test-suite')
+    run_and_save_cmd_res(out_file, 'sudo apt-get install -y bonnie++')
+    run_and_save_cmd_res(out_file, 'sudo apt-get install -y hdparm')
+
+def run_and_save_cmd_res(out_file, cmd):
+    out_file.write(subprocess.check_output(cmd.split(" ")))
+
+
+if __name__ == '__main__':
+    single_vm_benchmark()
+

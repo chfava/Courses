@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <ion-refresher slot="fixed" (ionRefresh)="refresh()">
+            <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h1>Profil</h1>
+                </ion-col>
+                <ion-col>
+                    <ion-button *ngIf="!isSuperAdminConnected && !isEditable && !isChangingPassword" size="small" fill="clear" color="primary" (click)="edit()" class="modify-profile-button">Modifier</ion-button>
+                    <ion-button *ngIf="!isSuperAdminConnected && isEditable && !isChangingPassword" size="small" fill="clear" color="primary" (click)="saveModifications()" class="modify-profile-button">Enregistrer</ion-button>
+                    <ion-button *ngIf="!isSuperAdminConnected && (isEditable || isChangingPassword)" size="small" fill="clear" color="danger" (click)="cancel()" class="modify-profile-button">Annuler</ion-button>
+                </ion-col>
+            </ion-row>
+            
+            <div *ngIf="isPageFirstLoading" class="full-over-page">
+                <ion-spinner></ion-spinner>
+            </div>
+
+            <ion-row *ngIf="!isChangingPassword && !isSuperAdminConnected">
+                <ion-col size="12">
+                    <form [formGroup]="profileForm" padding>
+                        <ion-item>
+                            <ion-label position="stacked" [ngClass]="{'disabled-field': !isEditable}">Prénom</ion-label>
+                            <ion-input [readonly]="!isEditable" formControlName="firstName" autocapitalize="on"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="stacked" [ngClass]="{'disabled-field': !isEditable}">Nom de famille</ion-label>
+                            <ion-input [readonly]="!isEditable" formControlName="lastName" autocapitalize="on"></ion-input>
+                        </ion-item>
+                        <ion-item *ngIf="employeeType === EmployeeType.Practician">
+                            <ion-label position="stacked" [ngClass]="{'disabled-field': !isEditable}">Téléphone</ion-label>
+                            <ion-input [readonly]="!isEditable" formControlName="phone" autocapitalize="on" type="tel"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="stacked" class="disabled-field">Rôle</ion-label>
+                            <ion-input [readonly]="true" formControlName="role" autocapitalize="on"></ion-input>
+                        </ion-item>
+                    </form>
+                    <ion-button *ngIf="!isEditable" size="small" fill="clear" color="primary" (click)="changePassword()" padding>Changer le mot de passe</ion-button>
+                </ion-col>
+            </ion-row>
+
+            <div *ngIf="isSuperAdminConnected || isChangingPassword" class="change-password">
+                <change-password (submittedSuccessful)="passwordChanged()"></change-password>
+            </div>
+        </ion-grid>        
+    </div>
+</ion-content>

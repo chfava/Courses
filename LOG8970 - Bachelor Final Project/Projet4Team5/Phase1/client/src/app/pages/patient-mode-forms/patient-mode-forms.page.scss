@@ -1,0 +1,76 @@
+.intro {
+    padding: 5% 8%;
+    background-color: #15878a;
+    margin-bottom: 30px;
+
+    h1 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: white;
+
+        .name {
+            font-weight: normal;
+        }
+    }
+
+    h2 {
+        font-size: 26px;
+        font-weight: 400;
+        text-align: right;
+        margin-bottom: 20px;
+        color: white;
+    }
+}
+
+.container {
+    padding: 0 5% 7%;
+
+    .description {
+        font-size: 18px;
+        color: #a6a6a6;
+        margin-bottom: 50px;
+    }
+
+
+    ion-list {
+        ion-item {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-content: center;
+            background-color: slategray !important;
+            --padding-start: 0;
+
+            .form-title {
+                display: inline-block;
+                order: 1;
+                flex: 1 1 auto;
+            }
+
+            &.form-answered {
+                color: green;
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+
+        ion-button {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            min-width: 60%;
+            margin: 50px auto 0 auto;
+        }
+    }
+}
+
+.full-over-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+}

@@ -1,0 +1,7 @@
+pandas
+boto3
+sklearn
+scikit-learn spark-sklearn
+joblibspark
+wheel setuptools
+pyspark

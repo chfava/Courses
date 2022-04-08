@@ -1,0 +1,16 @@
+<ion-grid>
+    <ion-row>
+        <ion-col class="question" size-sm="4" size-xs="12">
+            {{question}}
+        </ion-col>
+        <ion-col size-sm="8" size-xs="12">
+            <ion-item [disabled]="!isEditable">
+                <ion-select (ngModelChange)="updatedAnswer($event)" [(ngModel)]="selectedOption">
+                    <ion-select-option *ngFor="let option of options" [value]="option">
+                        {{option}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-grid>

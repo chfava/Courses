@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="backHref"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="!isLoading">
+
+        <app-diagnosis-results [decisionTreeResults]="decisionTreeResults" [aiResults]="aiResults[0]" [formAnswers4]="formResults4" (diagnosisIsSelected)="selectDiagnosis($event)"></app-diagnosis-results>
+        <app-treatment-results [aiResults]="aiResults[1]" [formAnswers4]="formResults4" (treatmentIsSelected)="selectTreatment($event)"></app-treatment-results>
+
+        <div class="bottomBloc">
+            <ion-button type="submit" class="button-native" [disabled]="submitIsDisabled || !diagnosisIsSelected || !treatmentIsSelected"
+                (click)="submit()">Soumettre</ion-button>
+        </div>
+    </ion-card>
+
+    <div *ngIf="isLoading" class="spinnerContainer">
+        <ion-spinner></ion-spinner>
+    </div>
+</ion-content>

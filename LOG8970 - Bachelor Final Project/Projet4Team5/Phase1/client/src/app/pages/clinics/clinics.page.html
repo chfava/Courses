@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <ion-refresher slot="fixed" (ionRefresh)="refresh()">
+            <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h1>Cliniques</h1>
+                </ion-col>
+                <ion-col>
+                    <ion-button fill="clear" color="primary" (click)="showClinicCreationPage()" class="add-clinic-button">Ajouter</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <div *ngIf="isPageFirstLoading" class="full-over-page">
+            <ion-spinner></ion-spinner>
+        </div>
+
+        <app-clinics-list (refreshed)="completeRefresherIfFinished()"></app-clinics-list>
+
+    </div>
+</ion-content>

@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.inner-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 85%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.text-style-title {
+  font-family: Consolas, Monaco, monospace;
+  font-size: 30px;
+}
+
+.text-style {
+  font-family: Consolas, Monaco, monospace;
+}

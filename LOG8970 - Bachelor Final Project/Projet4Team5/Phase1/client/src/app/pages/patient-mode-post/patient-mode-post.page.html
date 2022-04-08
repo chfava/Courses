@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>MODE PATIENT</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <h1>Vos réponses sont presque enregistrées.</h1>
+        <ion-icon name="happy"></ion-icon>
+        <h1>Rendez l'appareil à <br><span class="user-name">{{fullName}}</span></h1>
+        <h3>pour enregistrer le tout.</h3>
+
+        <div class="footer">
+            <signature #signature [name]="fullName"></signature>
+            <form [hidden]="!signature.checkbox.checked" [formGroup]="loginForm" padding (keydown.enter)="onSubmit()">
+                <ion-item>
+                    <ion-label position="floating">Nom d'utilisateur</ion-label>
+                    <ion-input readonly="true" formControlName="username" type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Mot de passe</ion-label>
+                    <ion-input formControlName="password" type="password"></ion-input>
+                </ion-item>
+            </form>
+            <ion-button [disabled]="loginFormIsSubmitted || !loginForm.valid" (click)="onSubmit()" color="primary" margin>Enregistrer</ion-button>
+        </div>
+    </div>
+</ion-content>

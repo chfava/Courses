@@ -1,0 +1,28 @@
+
+
+<div class="container">
+    <div class="horizontally-centered-element">
+        <p id="img-title">{{question}}</p>
+        <table #grid class="grid" [ngStyle]="getStyles()" (click)="updateSelectedBoxes($event, true)" (touchmove)="updateSelectedBoxes($event, false)">
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let col of columns" class="box"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <div class="horizontally-centered-element">
+        <ion-grid>
+            <ion-row>
+                <ion-button id="refreshBtn" (click)="refreshDrawing()">
+                    <ion-icon name="refresh-circle"></ion-icon>
+                    &nbsp;&nbsp;Réinitialiser
+                </ion-button>
+                <ion-item class="drawingToggle">
+                    <ion-label>Effacer</ion-label>
+                    <ion-toggle (ionChange)="toggleDrawing()">Effacer</ion-toggle>
+                </ion-item>
+            </ion-row>
+        </ion-grid>
+    </div>
+</div>

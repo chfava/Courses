@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PolyBlue v2.0</string>
+    <string name="members_string">Developpers:\n\nCharles-Olivier Favreau\nJulien Gauthier\nFrancis Laframboise</string>
+    <string name="stats_string">Application statistics</string>
+    <string name="stats_button_string">Check App stats</string>
+    <string name="map_button_string">Check Map</string>
+    <string name="back_string">Back</string>
+    <string name="battery_level_string">Current battery level</string>
+    <string name="battery_temp_string">Current battery temperature</string>
+    <string name="battery_volt_string">Current battery voltage</string>
+    <string name="battery_consumption_string">Battery used since app launched</string>
+    <string name="battery_used_for_network_search_string">Battery used for network searches</string>
+    <string name="downlink_info_string">Download total (bytes)</string>
+    <string name="uplink_info_string">Upload total (bytes)</string>
+    <string name="service_name">FileListenerService</string>
+    <string name="service_name2">FileTransferService</string>
+    <string name="null_string">---</string>
+    <string name="camera_string">Camera</string>
+    <string name="upgrade_required_21_string">"Update system to view app stats (>API 21)"</string>
+    <string name="turn_off_string">Turn off</string>
+    <string name="turn_on_string">Turn on</string>
+    <string name="refresh_string">Refresh</string>
+    <string name="pairing_string">Pairing</string>
+    <string name="input_address_title_string">Please enter a device IP address to be paired with</string>
+</resources>

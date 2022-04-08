@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+
+    ion-item {
+        display: inline-block;
+        order: 1;
+        flex: 0 1 auto;
+        --border-color: white;
+
+        ion-label {
+            font-size: 24px;
+        }
+    }
+
+    p {
+        display: inline-block;
+        order: 2;
+        flex: 1 1 auto;
+    }
+}

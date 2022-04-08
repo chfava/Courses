@@ -1,0 +1,22 @@
+<ion-card-content>
+    <h1 class="explicativeText">
+        Voici les traitements proposés par l'intelligence artificielle et ceux entrés par le praticien lors de l'examen
+        clinique. Il est possible de modifier les traitements entrés par le praticien lors de l'examen clinique.
+    </h1>
+</ion-card-content>
+
+<ion-card-content *ngIf="aiResults" (click)="switchContentShowed(Treatment.AI)">
+    <app-patient-treatment [treatments]="aiResults" [treatmentTitle]="'TRAITEMENTS PROPOSÉS PAR L\'INTELLIGENCE ARTIFICIELLE'"
+        [hideContent]="displayedTreatment !== Treatment.AI"></app-patient-treatment>
+</ion-card-content>
+
+<ion-card-content *ngIf="treatmentChoices && formAnswers4" (click)="switchContentShowed(Treatment.Practician)">
+    <app-patient-treatment-proposed-by-practician [treatmentChoices]="treatmentChoices" [formAnswers4]="formAnswers4"
+                                                  [linkedQuestionIndexes]="linkedQuestionIndexes"
+                                                  [hideContent]="displayedTreatment !== Treatment.Practician"></app-patient-treatment-proposed-by-practician>
+</ion-card-content>
+
+<div class="withPadding">
+    <radio-button-question (click)="selectTreatment()" [areUsedInForms]="false" [question]="'Quels sont les traitements retenus?'" 
+        [options]="['Ceux proposés par l\'intelligence artificielle', 'Ceux entrés par le praticien']"></radio-button-question>
+</div>

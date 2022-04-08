@@ -1,0 +1,37 @@
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <h2>Clinique</h2>
+        </ion-col>
+        <ion-col>
+            <ion-button *ngIf="!isEditable" size="small" fill="clear" color="primary" (click)="edit()" class="modify-clinic-button">Modifier</ion-button>
+            <ion-button *ngIf="isEditable" size="small" fill="clear" color="primary" (click)="saveModifications()" class="modify-clinic-button">Enregistrer</ion-button>
+            <ion-button *ngIf="isEditable" size="small" fill="clear" color="danger" (click)="cancel()" class="modify-clinic-button">Annuler</ion-button>
+        </ion-col>
+    </ion-row>
+    <form [formGroup]="clinicInfoForm" padding>
+        <ion-row>
+            <ion-col size="4" class="leftPart">
+                <ion-icon name="medical"></ion-icon>
+            </ion-col>
+            <ion-col size="8" class="rightPart">
+                <ion-item mode="md">
+                    <ion-label position="stacked" [ngClass]="{'disabled-field': !isEditable}">Nom</ion-label>
+                    <ion-input [readonly]="!isEditable" formControlName="name" autocapitalize="on"></ion-input>
+                </ion-item>
+                <ion-item mode="md">
+                    <ion-label position="stacked" [ngClass]="{'disabled-field': !isEditable}">Adresse</ion-label>
+                    <ion-input formControlName="address" [readonly]="!isEditable" spellcheck="false" autocapitalize="off"></ion-input>
+                </ion-item>
+                <ion-item mode="md">
+                    <ion-label position="stacked" [ngClass]="{'disabled-field': !isEditable}">Courriel</ion-label>
+                    <ion-input formControlName="email" [readonly]="!isEditable" placeholder="-" placeholder="-"></ion-input>
+                </ion-item>
+                <ion-item mode="md">
+                    <ion-label position="stacked" [ngClass]="{'disabled-field': !isEditable}">Téléphone</ion-label>
+                    <ion-input [readonly]="!isEditable" formControlName="phone" autocapitalize="on" type="tel" placeholder="-"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-grid>

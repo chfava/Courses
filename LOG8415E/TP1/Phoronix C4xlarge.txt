@@ -1,0 +1,56 @@
+C4xlarge.txt 
+
+Phoronix Test Suite v5.2.1
+
+    Installed: pts/timed-audio-encode-1.0.0
+    Installed: pts/encode-flac-1.6.0
+
+System Information
+
+Hardware:
+Processor: Intel Xeon E5-2666 v3 @ 2.90GHz (4 Cores), Motherboard: Xen HVM domU, Chipset: Intel 440FX- 82441FX PMC, Memory: 8192MB, Disk: 8GB, Graphics: Cirrus Logic GD 5446, Network: Intel 82599 Virtual Function
+
+Software:
+OS: Ubuntu 18.04, Kernel: 4.15.0-1057-aws (x86_64), File-System: ext4, System Layer: Xen HVM domU 4.2.amazon
+
+    Would you like to save these test results (Y/n): 
+Recently Saved Test Results:
+- c4xlarge   [Today]
+
+    Enter a name to save these results under:     Enter a unique name to describe this test run / configuration: 
+If you wish, enter a new description below to better describe this result set / system configuration under test.
+Press ENTER to proceed without changes.
+
+Current Description: Xen HVM domU 4.2.amazon testing on Ubuntu 18.04 via the Phoronix Test Suite.
+
+New Description: 
+
+FLAC Audio Encoding 1.3.2:
+    pts/encode-flac-1.6.0
+    Test 1 of 1
+    Estimated Trial Run Count:    5
+    Estimated Time To Completion: 2 Minutes
+        Started Run 1 @ 18:39:30
+[NOTICE] A non-numeric value encountered in cpu_usage:53
+
+[NOTICE] A non-numeric value encountered in cpu_usage:53
+
+        Started Run 2 @ 18:39:48
+        Started Run 3 @ 18:40:03
+        Started Run 4 @ 18:40:18
+        Started Run 5 @ 18:40:33  [Std. Dev: 0.51%]
+
+    Test Results:
+        13.219904899597
+        13.276643037796
+        13.151864051819
+        13.191487073898
+        13.099665164948
+
+    Average: 13.19 Seconds
+
+[NOTICE] Parameter 1 to graphics_event_checker::__post_test_run() expected to be a reference, value given in pts_module_manager:74
+
+[NOTICE] count(): Parameter must be an array or an object that implements Countable in pts_test_run_manager:611
+
+    Would you like to upload the results to OpenBenchmarking.org (Y/n): 

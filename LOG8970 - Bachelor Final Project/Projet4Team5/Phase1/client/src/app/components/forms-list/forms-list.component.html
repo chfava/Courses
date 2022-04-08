@@ -1,0 +1,23 @@
+<h2>{{ formListTitle }}</h2>
+<div *ngIf="formAnswers && formAnswers.length !== 0">
+    <ion-card>
+        <ion-list text-wrap>
+            <ion-item *ngFor="let formAnswer of formAnswers" detail="true" lines="full" (click)="routeToFormWithId(formAnswer.Id)">
+                <ion-label slot="start">
+                    {{ getFormTitle(formAnswer.Id) }}
+                </ion-label>
+                <ion-chip *ngIf="hasScore(formAnswer)" color="primary" slot="end">
+                    <ion-label>
+                        {{ calculateScore(formAnswer) }}
+                    </ion-label>
+                    <ion-icon name="star"></ion-icon>
+                </ion-chip>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</div>
+<div *ngIf="!formAnswers || formAnswers.length === 0" class="ion-text-center text-gray">
+    <ion-label>
+        Aucun formulaire
+    </ion-label>
+</div>

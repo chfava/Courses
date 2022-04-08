@@ -1,0 +1,41 @@
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <h2>Examens médicaux</h2>
+        </ion-col>
+        <ion-col>
+            <ion-button
+                fill="clear"
+                color="{{ hasActiveMedicalExam() ? 'medium' : 'primary' }}"
+                class="add-medical-exam-button"
+                (click)="clickAddMedicalExam()">
+                Ajouter
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+<div *ngIf="hasMedicalExams()">
+    <ion-card>
+        <ion-list>
+            <ion-item
+                [ngClass]="{'active': medicalExam.isActive}"
+                class="medical-exam-item"
+                detail="true"
+                lines="full"
+                *ngFor="let medicalExam of medicalExams"
+                (click)="routeToMedicalExam(medicalExam)">
+                <ion-label *ngIf="medicalExam.isActive" slot="start">
+                    Aujourd'hui
+                </ion-label>
+                <ion-label *ngIf="!medicalExam.isActive" slot="start" [innerHTML]="medicalExamTitleFromDate(medicalExam.DateCreated)">
+                </ion-label>
+                <ion-chip *ngIf="medicalExam.isActive" color="primary" slot="end">
+                    <ion-label><b>ACTIF</b></ion-label>
+                </ion-chip>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</div>
+<div *ngIf="!hasMedicalExams()" class="ion-text-center">
+    <ion-label color="medium">Ce patient n'a aucun examen médical.</ion-label>
+</div>

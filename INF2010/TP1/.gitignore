@@ -1,0 +1,17 @@
+/AbstractPixel.class
+/BWPixel.class
+/ColorPixel.class
+/DisplayImage.class
+/DisplayImageWindow.class
+/FormValidator.class
+/GrayPixel.class
+/ImageOperations.class
+/Main.class
+/PixelMap$ImageType.class
+/PixelMap.class
+/PixelMapPlus.class
+/TransparentPixel.class
+
+*.xml
+
+PixelMapPlus.java

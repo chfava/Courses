@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Nouvelle clinique</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="closeModal()" color="danger" *ngIf="!isSubmitted">Annuler</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">
+                    <form [formGroup]="clinicCreationForm" padding (keydown.enter)="onSubmit()">
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Nom</ion-label>
+                            <ion-input formControlName="name" autocapitalize="on"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Adresse</ion-label>
+                            <ion-input formControlName="address" autocapitalize="off"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Courriel</ion-label>
+                            <ion-input formControlName="email"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Téléphone</ion-label>
+                            <ion-input formControlName="phone" autocapitalize="false"></ion-input>
+                        </ion-item>
+                        <ion-button
+                                (click)="onSubmit()"
+                                [disabled]="!clinicCreationForm.valid || isSubmitted"
+                                color="primary"
+                                expand="block"
+                                margin>
+                            Créer la clinique
+                        </ion-button>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

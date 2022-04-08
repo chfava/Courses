@@ -1,0 +1,42 @@
+.container {
+    width: 80%;
+    min-width: 320px;
+    margin: 40px auto 0;
+    position: relative;
+
+    h1 {
+        font-weight: bold;
+        padding: 0 0 0 12px;
+    }
+
+    ion-spinner {
+        display: block;
+        margin: 30px auto 0;
+    }
+
+    .centered {
+        display: block;
+        padding-right: 16px;
+    }
+
+    .full-over-page {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: white;
+        z-index: 10;
+    }
+
+    ion-grid {
+        padding: 0;
+    }
+
+    .add-patient-button {
+        height: 100%;
+        float: right;
+    }
+}
+
+.list-container {
+    margin-top: 40px;
+}

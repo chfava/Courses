@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button *ngIf="!isBusy"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <h1>Intelligence artificielle</h1>
+        <ion-img src="../../../assets/logos/full-logo.png" padding-top></ion-img>
+        <p class="description">
+            Meditrinae permet de collecter des données médicales sur des patients rencontrés par un praticien. Le module de
+            l'intelligence
+            artificielle est directement dépendant de ces données. De temps à autres, il est important de l'entraîner à nouveau
+            pour qu'il
+            devienne meilleur.
+        </p>
+        <ion-grid>
+            <ion-row>
+                <ion-button color="primary" *ngIf="!isTrainingAI" (click)="trainAI()"
+                            [disabled]="isAITrained">{{trainAIButtonTitle}}</ion-button>
+                <div *ngIf="isTrainingAI" class="loading-block">
+                    <p>Apprentissage en cours</p>
+                    <ion-spinner></ion-spinner>
+                </div>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div class="footer">
+        <ion-button fill="clear" color="secondary" *ngIf="!isExportingData" (click)="exportData()"
+                    [disabled]="isDataExported">{{exportDataButtonTitle}}</ion-button>
+        <div *ngIf="isExportingData" class="loading-block">
+            <p>Téléchargement du fichier</p>
+            <ion-spinner></ion-spinner>
+        </div>
+    </div>
+</ion-content>

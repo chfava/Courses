@@ -1,0 +1,22 @@
+ion-spinner {
+    display: block;
+    margin: 30px auto 0;
+}
+
+ion-label {
+    padding: 0 0 0 16px;
+    color: gray;
+
+    &.no-result {
+        padding: 20px 20px 40px;
+    }
+}
+
+.centered {
+    display: block;
+    padding-right: 16px;
+}
+
+ion-card {
+    margin-top: 8px;
+}

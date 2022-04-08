@@ -1,0 +1,27 @@
+/* menu.json */
+[
+    {
+        "title": "futur étudiant",
+        "link": "http://www.polymtl.ca/#"
+    },
+    {
+        "title": "étudiant actuel",
+        "link": "http://www.polymtl.ca/etudiant/index.php"
+    },
+    {
+        "title": "diplomé - ancien",
+        "link": "http://www.polymtl.ca/diplome/index.php"
+    },
+    {
+        "title": "entreprise",
+        "link": "http://www.polymtl.ca/entreprise/index.php"
+    },
+    {
+        "title": "média",
+        "link": "http://www.polymtl.ca/salle-de-presse/"
+    },
+    {
+        "title": "professeur - personnel",
+        "link": "http://www.polymtl.ca/professeur/"
+    }
+]

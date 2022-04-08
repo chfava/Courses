@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="backHref"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="!isLoading()">
+        <div class="intro" *ngIf="patient && practician">
+            <h2 class="date" [innerHTML]="medicalExamDate"></h2>
+            <h1 class="patient">Patient: <span class="name">{{patient.Name}}</span></h1>
+            <h1 class="practician">Praticien: <span class="name">{{practician.Name}}</span></h1>
+        </div>
+        <ion-card class="fadeIn">
+            <ion-card-header>
+                <ion-label class="large-text">
+                    Résumé
+                </ion-label>
+            </ion-card-header>
+            <ion-card-content *ngIf="selectedDiagnosisChoices" (click)="clickToggleDiagnosis()">
+                <app-patient-diagnosis
+                    [diagnosisTitle]="'Diagnostics du patient'"
+                    [diagnosis]="selectedDiagnosisChoices"
+                    [hideContent]="hideDiagnosis">
+                </app-patient-diagnosis>
+            </ion-card-content>
+            <ion-card-content *ngIf="selectedTreatmentChoices" (click)="clickToggleTreatment()">
+                <app-patient-treatment
+                    [treatmentTitle]="'Traitements du patient'"
+                    [treatments]="selectedTreatmentChoices"
+                    [hideContent]="hideTreatment">
+                </app-patient-treatment>
+            </ion-card-content>
+            <ion-card-content>
+                <ion-grid class="ion-no-padding">
+                    <ion-row>
+                        <ion-col size="6" class="ion-no-padding">
+                            Ouverture maximale sans aide : {{maximumOpeningWithoutHelp ? maximumOpeningWithoutHelp : "-"}} mm.
+                        </ion-col>
+                        <ion-col size="6" class="ion-no-padding">
+                            Ouverture maximale avec aide : {{maximumOpeningWithHelp ? maximumOpeningWithHelp : "-"}} mm.
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+        <div class="form-list-container fadeIn">
+            <app-forms-list
+                [formListTitle]="'Formulaires principaux remplis lors de l\'examen'"
+                [formAnswers]="getMainFormAnswers()"
+                [url]="url"
+                [params]="previousMedicalExamParam">
+            </app-forms-list>
+            <app-forms-list
+                [formListTitle]="'Formulaires complémentaires remplis lors de l\'examen'"
+                [formAnswers]="getComplementaryFormAnswers()"
+                [url]="url"
+                [params]="previousMedicalExamParam">
+            </app-forms-list>
+        </div>
+    </div>
+
+    <div *ngIf="isLoading()" class="spinnerContainer">
+        <ion-spinner></ion-spinner>
+    </div>
+</ion-content>

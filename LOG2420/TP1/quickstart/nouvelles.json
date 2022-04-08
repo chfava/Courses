@@ -1,0 +1,28 @@
+/* nouvelles.json */
+[
+    {
+        "date": "16 janvier 2017",
+        "titre": "Rapport de durabilité 2015-2016",
+        "message": "le point sur les progrès en développement durable à Polytechnique Montréal"
+    },
+    {
+        "date": "13 janvier 2017",
+        "titre": "Jeux de Génie 2017",
+        "message": "la délégation de Polytechnique Montréal sur la deuxième marche du podium"
+    },
+    {
+        "date": "12 janvier 2017",
+        "titre": "Métaux et économie circulaire",
+        "message": "soutien gouvernemental de 900 000 $ pour un projet de recherche de l’Institut EDDEC sous la direction scientifique de Polytechnique Montréal"
+    },
+    {
+        "date": "10 janvier 2017",
+        "titre": "Détection des liquides toxiques",
+        "message": "l'impression 3D et la nanotechnologie forment une alliance redoutable"
+    },
+    {
+        "date": "23 janvier 2016",
+        "titre": "Efficacité énergétique",
+        "message": "le professeur Michaël Kummert à la direction d’une recherche sur les réseaux de chaleur de quatrième génération"
+    }
+]

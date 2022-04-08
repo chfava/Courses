@@ -1,0 +1,121 @@
+<header>
+            <ul>
+                <li> <a class ="FirstElem" href = "http://www.polymtl.ca/#"> FUTUR ÉTUDIANT</a> </li>
+                <li> <p> | </p>
+                <li><a href = "http://www.polymtl.ca/etudiant/index.php">ÉTUDIANT ACTUEL</a> </li>
+                <li> <p> | </p>
+                <li><a href = "http://www.polymtl.ca/diplome/index.php">DIPLÔMÉ - ANCIEN </a> </li>
+                <li> <p> | </p>
+                <li><a href = "http://www.polymtl.ca/entreprise/index.php">ENTREPRISE </a> </li>
+                <li> <p> | </p>
+                <li><a href = "http://www.polymtl.ca/salle-de-presse/">MEDIA</a> </li>
+                <li> <p> | </p>
+                <li><a href = "http://www.polymtl.ca/professeur/">PROFESSEUR - PERSONNEL</a></li>
+            </ul>
+        </header>
+
+        <div id = "div1">
+
+            <div id = "div2">
+                <p>
+
+                    <a id = "LogoPoly" href= #><img src="app/images/LogoPoly.jpg"
+                    alt = "logo de Polytechnique Montréal" title="Accueil" > </a>
+                    <a class = "Liens"  href = #> ENGLISH </a>
+                </p>
+            </div>
+
+            <div id = "div3">
+
+                <div class = "blocVignetteHaut">
+                    <a href ="http://www.facebook.com"> <img src="app/images/VignetteFB.jpg" alt = "logo Facebook" title = "Facebook"> </a>
+                </div>
+                <div class = "blocVignetteHaut">
+                    <a href ="http://www.linkedin.com"> <img src="app/images/VignetteLinkedIn.jpg" alt = "logo LinkedIn" title = "LinkedIn"> </a>
+                </div>
+                <div class = "blocVignetteHaut">
+                    <a href ="http://www.instagram.com"> <img src="app/images/VignetteInsta.jpg" alt = "logo Instagram" title = "Insta"> </a>
+                </div>
+                <div id = "PremierBlocVignetteBas">
+                    <a href ="http://www.rss.com"> <img src="app/images/VignetteRss.jpg" alt = "logo Rss" title = "Rss"> </a>
+                </div>
+                <div class = "blocVignetteBas">
+                    <a href ="http://www.twitter.com"> <img src="app/images/VignetteTwitter.jpg" alt = "logo Twitter" title = "Twitter"> </a>
+                </div>
+                <div id = "youtube">
+                    <a href ="http://www.youtube.com"> <img src="app/images/VignetteYoutube.jpg" alt = "logo Youtube" title = "Youtbe"> </a>
+                </div>
+
+                <div id ="partieGauche">
+                    <div id ="lienRapide">
+                        <a class = "Liens" href=#> Liens rapides </a>
+                    </div>
+                    <div id = "loupe">
+                        <a href= #><img src="app/images/loupe.jpg"  alt = "loupe de recherche" /> </a>
+                    </div>
+                    <div id = "menu">
+                        <a href =#> MENU <img src ="app/images/menu.jpg" alt = "Menu"/> </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id = "ImagePrincipale">
+                <img src = "app/images/etudiants.jpg" alt ="Étudiants"/>
+            </div>
+
+            <div id = "div4">
+                <h2> <br>INTERNATIONAL</h2>
+                <p>
+                Avec plus de 250 ententes universitaires et 24% d'étudiants internationaux,
+                 Polytechnique Montréal est plus que jamais ouverte sur le monde. <br><br>
+                 <a class = "Liens"  href = #> Découvrez les possibilités</a>
+                </p>
+            </div>
+
+            <div id = "div5">
+                <ul id = "nouvelles">
+                    <li id = "nouvelle" > <a href =#>NOUVELLES</a> </li>
+                   
+                    <li id = "activités"> <a href =#>ACTIVITÉS</a> </li>
+                    <tr>
+                      <p>
+                       <b> 16 janvier 2017 </b>
+                          Rapport de durabilité 2015-2016, le point sur les progrès en développement durable à Polytechnique Montréal
+                        </p>
+                    </tr>
+                    <tr>
+                        <p>
+                    <b>13 janvier 2017</b>,
+                    Jeux de Génie 2017, la délégation de Polytechnique Montréal sur la deuxième marche du podium
+                        </p>
+                    </tr>
+                    <tr>
+                      <p>
+                   <b> 12 janvier 2017 </b>, Métaux et économie circulaire soutien gouvernemental de 900 000 $ pour un projet de recherche de l’Institut EDDEC sous la direction scientifique de Polytechnique Montréal
+                  </p>
+                    </tr>
+                    <tr>
+                      <p>
+                      <b>10 janvier 2017 </b>, Détection des liquides toxiques, l'impression 3D et la nanotechnologie forment une alliance redoutable
+                    </p>
+                    </tr>
+                    <tr>
+                      <p>
+                    <b>23 janvier 2016 </b>, Efficacité énergétique, le professeur Michaël Kummert à la direction d’une recherche sur les réseaux de chaleur de quatrième génération
+                      </p>
+                    </tr>
+
+                </ul>
+                <ul id = "tabNouv">
+                    <li *ngFor= "let item of news">
+                        <p> {{item.date}}</p>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>

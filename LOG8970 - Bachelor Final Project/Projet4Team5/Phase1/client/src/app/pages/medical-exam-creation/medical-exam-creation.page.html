@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Nouvel examen médical</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="closeModal()" color="danger">Annuler</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="!isLoading">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">
+                    <form [formGroup]="medicalExamCreationForm" padding>
+                        <ion-label class="date" [innerHTML]="dateHtmlString"></ion-label>
+                        <ion-item>
+                            <ion-label position="stacked">Mené par</ion-label>
+                            <ion-select formControlName="practicianId" [attr.disabled]="!practicians">
+                                <ion-select-option *ngFor="let practician of practicians"
+                                                   [value]="practician.Id">{{practician.Name}}</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                        <p *ngIf="!practicians" class="no-practician">Aucun praticien n'existe dans la clinique. Demandez à un administrateur d'en créer un afin de pouvoir créer un examen médical.</p>
+                        <ion-button
+                                (click)="onSubmit()"
+                                [disabled]="!medicalExamCreationForm.valid || isLoading"
+                                color="primary"
+                                expand="block"
+                                margin>
+                            Créer l'examen
+                        </ion-button>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div *ngIf="isLoading" class="spinner-container">
+        <ion-spinner></ion-spinner>
+    </div>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-label>{{title}}</ion-label>
+<div *ngIf="hasPatients()">
+    <ion-card>
+        <ion-list>
+            <ion-item *ngFor="let patient of patients"
+                      routerLink="/patients/{{patient.Id}}"
+                      routerDirection="forward">
+                <p>{{patient.Name}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</div>
+<div *ngIf="!hasPatients()">
+    <ion-label class="ion-text-center centered no-result">{{emptyDescription}}</ion-label>
+</div>

@@ -1,0 +1,31 @@
+import { Animation } from "@ionic/core";
+
+export function customEnterAnimation(AnimationC: Animation, baseEl: HTMLElement): Promise<Animation> {
+    const baseAnimation = new AnimationC();
+
+    const backdropAnimation = new AnimationC();
+    backdropAnimation.addElement(baseEl.querySelector("ion-backdrop"));
+
+    const wrapperAnimation = new AnimationC();
+    wrapperAnimation.addElement(baseEl.querySelector(".picker-wrapper"));
+
+    wrapperAnimation
+        .fromTo(
+            "transform",
+            "translateX(0%) translateY(-50%) scaleX(1.2) scaleY(1.2)",
+            "translateX(-0%) translateY(-50%) scaleX(1) scaleY(1)"
+        )
+        .fromTo("opacity", 0, 1);
+
+    backdropAnimation.fromTo("opacity", 0.01, 0.4);
+
+    return Promise.resolve(
+        baseAnimation
+            .addElement(baseEl)
+            .easing("cubic-bezier(0.36,0.66,0.04,1)")
+            .duration(200)
+            .beforeAddClass("show-modal")
+            .add(backdropAnimation)
+            .add(wrapperAnimation)
+    );
+}

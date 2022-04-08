@@ -1,0 +1,15 @@
+<ion-grid>
+    <ion-row>
+        <ion-col class="question" size-sm="4" size-xs="12">
+            {{question}}
+        </ion-col>
+        <ion-col size-sm="8" size-xs="12">
+            <ion-list>
+                <ion-item (click)="optionClicked(option)" *ngFor="let option of options" [disabled]="!isEditable">
+                    <ion-label>{{option}}</ion-label>
+                    <ion-checkbox [checked]="isChecked(option)" slot="start"></ion-checkbox>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+</ion-grid>

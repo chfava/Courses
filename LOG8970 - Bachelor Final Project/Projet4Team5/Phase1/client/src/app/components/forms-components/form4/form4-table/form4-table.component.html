@@ -1,0 +1,38 @@
+<ion-grid *ngIf="valuesLoaded">
+    <ion-row *ngIf="titles">
+        <ion-col size="{{12 / titles.length}}" *ngFor="let title of titles">
+            <h5 class="title">{{title}}</h5>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="superHeader">
+        <ion-col class="superHeader" offset="{{superHeader.offset}}" size="{{superHeader.size}}">
+            <h3 class="superHeader">{{superHeader.text}}</h3>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="headers">
+        <ion-col size="{{12 / headers.length}}" *ngFor="let header of headers; let headerIndex = index;" [class.first-header]="headerIndex === 0">
+            {{header}}
+        </ion-col>
+    </ion-row>
+    <ion-row class="row" *ngFor="let rowHeader of rowHeaders; let row = index;">
+        <ion-col *ngIf="rowHeader.length !== 0" class="row-header" size="{{12 / headers.length}}">
+            {{rowHeader}}
+        </ion-col>
+        <ion-col size="{{12 / getColCount()}}" *ngFor="let display of yesNoDisplay[row]; let col = index;">
+            <ion-radio-group class="radio-group" *ngIf="isYesNo && display">
+                <ion-row>
+                    <ion-col size="6" *ngFor="let text of ['N', 'O']; let radioIndex = index;">
+                        <ion-item (click)="onChange(radioIndex, ids[row][col])" lines="none" [disabled]="!isEditable">
+                            <ion-label>{{text}}</ion-label>
+                            <ion-radio [checked]="values[row][col] === radioIndex" slot="start"></ion-radio>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-radio-group>
+            <ion-item *ngIf="!isYesNo" (click)="onChange(displayedAsRow ? col : row, displayedAsRow ? ids[0][0] : ids[0][col])" lines="none" [disabled]="!isEditable">
+                <ion-label>{{display}}</ion-label>
+                <ion-checkbox [checked]="isCheckboxChecked(row, col)" *ngIf="!useRadio && display.length !== 0" slot="start"></ion-checkbox>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-grid>

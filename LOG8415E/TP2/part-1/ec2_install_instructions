@@ -1,0 +1,56 @@
+1. Install Python 3 (will install X version) or check existing version :
+
+	sudo apt install python3
+
+2. Update Python
+
+	sudo apt-get update && sudo apt-get upgrade
+	sudo apt-get install python3.7
+	sudo apt install python3-pip
+
+3. Install java (might be already installed check in /usr/lib/jvm)
+
+	sudo apt install openjdk-8-jre-headless
+
+6. Find newest version of Spark and Hadoop
+	
+	wget http://www.gtlib.gatech.edu/pub/apache/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
+
+	sudo tar -zxvf spark-2.4.5-bin-hadoop2.7.tgz
+
+7. "Tell Python where to find spark" [TO PARAPHRASE]
+	export SPARK_HOME='/home/ubuntu/spark-2.4.5-bin-hadoop2.7'
+	export PATH=$SPARK_HOME:$PATH
+	export PYSPARK_PYTHON=python3.7
+	export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64	
+
+9. Install boto3 & pyspark & stop_words
+	python3.7 -m pip install boto3
+	python3.7 -m pip install pyspark
+	python3.7 -m pip install stop_words
+8. Configure boto3 (manually SAFER, explain)
+	sudo apt install awscli 
+	aws configure (follow steps online)
+
+
+
+
+
+4. Install scala [might be optional]
+
+	sudo apt-get install scala
+
+5. May need to install pip
+
+
+[USE python3.7]
+
+
+5. Install py4j
+	python3.7 -m pip install py4j
+
+
+Sources
+https://medium.com/@josemarcialportilla/getting-spark-python-and-jupyter-notebook-running-on-amazon-ec2-dec599e1c297
+https://askubuntu.com/questions/459900/how-to-find-my-current-java-home-in-ubuntu
+https://gist.github.com/codspire/ee4a46ec054f962d9ef028b27fcb2635

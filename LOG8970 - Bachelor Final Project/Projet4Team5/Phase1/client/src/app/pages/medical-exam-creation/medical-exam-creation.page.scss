@@ -1,0 +1,33 @@
+.date {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 60px;
+    margin-bottom: 70px;
+    color: #a6a6a6;
+}
+
+
+ion-item {
+    width: 65%;
+    font-size: 24px;
+    margin: 0 auto 70px;
+}
+
+.spinner-container {
+    width: 100%;
+
+    ion-spinner {
+        display: block;
+        margin: 110px auto auto;
+    }
+}
+
+.no-practician {
+    display: block;
+    width: 75%;
+    margin: 0 auto 10px;
+    text-align: center;
+    color: gray;
+    font-size: 17px;
+}

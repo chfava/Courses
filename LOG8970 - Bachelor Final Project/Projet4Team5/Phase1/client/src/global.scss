@@ -1,0 +1,104 @@
+// http://ionicframework.com/docs/theming/
+// Use this to modify default colors: https://ionicframework.com/docs/theming/color-generator
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+ion-label {
+    white-space: normal !important;
+}
+
+:root {
+    --ion-color-primary: #5Ce1e6;
+    --ion-color-primary-rgb: 92, 225, 230;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 0, 0, 0;
+    --ion-color-primary-shade: #51c6ca;
+    --ion-color-primary-tint: #6ce4e9;
+
+    --ion-color-secondary: #1db4b8;
+    --ion-color-secondary-rgb: 29, 180, 184;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 0, 0, 0;
+    --ion-color-secondary-shade: #1a9ea2;
+    --ion-color-secondary-tint: #34bcbf;
+
+    --ion-color-tertiary: #15878a;
+    --ion-color-tertiary-rgb: 21, 135, 138;
+    --ion-color-tertiary-contrast: #ffffff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #127779;
+    --ion-color-tertiary-tint: #2c9396;
+
+    --ion-color-success: #07e4a8;
+    --ion-color-success-rgb: 7, 228, 168;
+    --ion-color-success-contrast: #4d535e;
+    --ion-color-success-contrast-rgb: 0, 0, 0;
+    --ion-color-success-shade: #06c994;
+    --ion-color-success-tint: #20e7b1;
+
+    --ion-color-warning: #dce10f;
+    --ion-color-warning-rgb: 220, 225, 15;
+    --ion-color-warning-contrast: #4d535e;
+    --ion-color-warning-contrast-rgb: 0, 0, 0;
+    --ion-color-warning-shade: #c2c60d;
+    --ion-color-warning-tint: #e0e427;
+
+    --ion-color-danger: #ff6b6b;
+    --ion-color-danger-rgb: 255,107,107;
+    --ion-color-danger-contrast: #ffffff;
+    --ion-color-danger-contrast-rgb: 255,255,255;
+    --ion-color-danger-shade: #e05e5e;
+    --ion-color-danger-tint: #ff7a7a;
+
+    --ion-color-dark: #4d535e;
+    --ion-color-dark-rgb: 77, 83, 94;
+    --ion-color-dark-contrast: #ffffff;
+    --ion-color-dark-contrast-rgb: 255, 255, 255;
+    --ion-color-dark-shade: #444953;
+    --ion-color-dark-tint: #5f646e;
+
+    --ion-color-medium: #a6a6a6;
+    --ion-color-medium-rgb: 166, 166, 166;
+    --ion-color-medium-contrast: #4d535e;
+    --ion-color-medium-contrast-rgb: 0, 0, 0;
+    --ion-color-medium-shade: #929292;
+    --ion-color-medium-tint: #afafaf;
+
+    --ion-color-light: #f4f4f4;
+    --ion-color-light-rgb: 244, 244, 244;
+    --ion-color-light-contrast: #4d535e;
+    --ion-color-light-contrast-rgb: 0, 0, 0;
+    --ion-color-light-shade: #d7d7d7;
+    --ion-color-light-tint: #f5f5f5;
+
+    --ion-font-family: -apple-system-font, "Helvetica Neue", HelveticaNeue, "Roboto", "Segoe UI", sans-serif;
+}
+
+.employee-update-modale .modal-wrapper {
+    height: 510px;
+}
+
+.employee-update-modale-for-current-user .modal-wrapper {
+    height: 245px;
+}
+
+.employee-creation-modale .modal-wrapper {
+    height: 440px;
+}
+
+.employee-creation-modale-for-practician .modal-wrapper {
+    height: 510px;
+}
+
+.picker-wrapper {
+    top: 50% !important;
+    position: relative !important;
+    border-radius: 7px !important;
+}

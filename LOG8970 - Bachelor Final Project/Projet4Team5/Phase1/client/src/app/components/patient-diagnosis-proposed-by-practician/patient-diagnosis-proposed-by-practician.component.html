@@ -1,0 +1,10 @@
+<p [ngClass]="{'showContent': hideContent === false}">
+    DIAGNOSTICS ENTRÉS PAR LE PRATICIEN LORS DE L'EXAMEN CLINIQUE {{(hideContent !== undefined ? "" : ":")}}
+    <ion-icon name="arrow-down" *ngIf="hideContent === true"></ion-icon>
+    <ion-icon name="arrow-up" *ngIf="hideContent === false"></ion-icon>
+</p>
+<div [ngClass]="{'hideContent': hideContent === true}" (click)="stopPropagation($event)">
+    <checkbox-question [areUsedInForms]="false" [options]="diagnosisChoices[0]" [question]="'Désordres douleureux :'"></checkbox-question>
+    <checkbox-question [areUsedInForms]="false" [options]="diagnosisChoices[1]" [question]="'Désordres ATM droite :'"></checkbox-question>
+    <checkbox-question [areUsedInForms]="false" [options]="diagnosisChoices[2]" [question]="'Désordres ATM gauche :'"></checkbox-question>
+</div>

@@ -1,0 +1,3 @@
+// Description : confusion entre les entiers et les flottants
+
+a = 5 + 1.0

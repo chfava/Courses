@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd ~/workspace/meditrinae-build-staging/server
+npm install
+npm run build
+pm2 restart meditrinae_api_staging
+exit

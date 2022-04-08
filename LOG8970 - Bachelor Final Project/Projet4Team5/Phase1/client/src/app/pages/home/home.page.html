@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <ion-refresher slot="fixed" (ionRefresh)="refresh()">
+            <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h1>Patients</h1>
+                </ion-col>
+                <ion-col>
+                    <ion-button fill="clear" color="primary" (click)="showPatientCreationPage()" class="add-patient-button">Ajouter</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <app-patients-search #search [ngClass]="{'full-over-page': search.inputValue}"></app-patients-search>
+
+        <div *ngIf="isHomeFirstLoading" class="full-over-page">
+            <ion-spinner></ion-spinner>
+        </div>
+
+        <div class="list-container">
+            <app-patients-list [patients]="activePatients" title="Aujourd'hui" emptyDescription="Aucun patient n'a été rencontré aujourd'hui."></app-patients-list>
+        </div>
+        <div class="list-container">
+            <app-patients-list [patients]="recentsPatients | slice:0:8" title="Récents" emptyDescription="Aucun patient ne s'est connecté récemment."></app-patients-list>
+        </div>
+
+        <ion-button fill="clear" class="centered" *ngIf="!isAlphabeticalListVisible" (click)="showAlphabeticalList()">
+            Afficher de A à Z
+        </ion-button>
+
+        <div class="list-container">
+            <app-patients-list-by-alphabetical-order *ngIf="isAlphabeticalListVisible"></app-patients-list-by-alphabetical-order>
+        </div>
+    </div>
+</ion-content>

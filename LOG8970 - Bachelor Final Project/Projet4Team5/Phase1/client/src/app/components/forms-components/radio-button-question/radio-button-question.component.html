@@ -1,0 +1,28 @@
+<ion-grid>
+    <ion-row *ngIf="!isYesNoQuestionFromForm4">
+        <ion-col class="question" size-sm="4" size-xs="12">
+            {{question}}
+        </ion-col>
+        <ion-col size-sm="8" size-xs="12">
+            <ion-radio-group>
+                <ion-item (ionSelect)="optionClicked(option)" *ngFor="let option of options" [disabled]="!isEditable">
+                    <ion-label>{{option}}</ion-label>
+                    <ion-radio [checked]="isChecked(option)" slot="start"></ion-radio>
+                </ion-item>
+            </ion-radio-group>
+        </ion-col>
+    </ion-row>
+    <ion-row radio-group *ngIf="isYesNoQuestionFromForm4" class="yes-no-question">
+        <ion-col class="question" size-sm="7" size-xs="12">
+            {{question}}
+        </ion-col>
+        <ion-radio-group>
+            <ion-col size-sm="2" size-xs="6" *ngFor="let option of options">
+                <ion-item (ionSelect)="optionClicked(option)" [disabled]="!isEditable" lines="none">
+                    <ion-label>{{option}}</ion-label>
+                    <ion-radio [checked]="isChecked(option)" slot="start"></ion-radio>
+                </ion-item>
+            </ion-col>
+        </ion-radio-group>
+    </ion-row>
+</ion-grid>

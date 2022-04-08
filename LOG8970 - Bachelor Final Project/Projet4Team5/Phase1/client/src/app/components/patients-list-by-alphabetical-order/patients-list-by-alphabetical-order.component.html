@@ -1,0 +1,25 @@
+<ion-label>A-Z</ion-label>
+<ion-card *ngIf="!isInitializing && hasPatients()">
+    <ion-list>
+        <ion-item *ngFor="let patient of pages[currentPage]"
+                  routerLink="/patients/{{patient.Id}}"
+                  routerDirection="forward">
+            <p>{{patient.Name}}</p>
+        </ion-item>
+    </ion-list>
+</ion-card>
+<div *ngIf="!isInitializing && !hasPatients()">
+    <ion-label class="ion-text-center centered no-result">La clinique n'a aucun patient.</ion-label>
+</div>
+<div *ngIf="isLoadingPage || isInitializing">
+    <ion-spinner></ion-spinner>
+</div>
+<div class="page-picker" *ngIf="!isLoadingPage && !isInitializing && hasPatients()">
+    <ion-button fill="clear" [disabled]="!hasPreviousPage()" (click)="onPreviousPage()">
+        <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <p>{{currentPage + 1}}/{{pageCount}}</p>
+    <ion-button fill="clear" [disabled]="!hasNextPage()" (click)="onNextPage()">
+        <ion-icon name="arrow-forward"></ion-icon>
+    </ion-button>
+</div>

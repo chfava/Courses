@@ -1,0 +1,60 @@
+.container {
+    width: 80%;
+    min-width: 320px;
+    margin: 40px auto 0;
+    position: relative;
+
+    ion-img {
+        display: block;
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    .description {
+        width: 75%;
+        font-size: 17px;
+        color: #959595;
+        text-align: center;
+        margin: 30px auto 0;
+    }
+
+    ion-button  {
+        margin: 30px auto;
+    }
+
+    .loading-block {
+        margin: 20px auto;
+    }
+}
+
+.loading-block {
+    margin: 20px auto;
+
+    ion-spinner {
+        display: block;
+        margin: 0 auto;
+    }
+
+    p {
+        font-size: 17px;
+        color: #959595;
+        margin: 0 auto 20px auto;
+        text-align: center;
+    }
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 81px;
+
+    ion-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .loading-block {
+        margin: 0 auto;
+    }
+}

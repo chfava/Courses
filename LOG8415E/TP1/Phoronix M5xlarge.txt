@@ -1,0 +1,34 @@
+Current Description: KVM testing on Ubuntu 18.04 via the Phoronix Test Suite.
+
+New Description: 
+
+
+FLAC Audio Encoding 1.3.2:
+    pts/encode-flac-1.6.0
+    Test 1 of 1
+    Estimated Trial Run Count:    5
+    Estimated Time To Completion: 4 Minutes
+        Started Run 1 @ 19:32:38
+[NOTICE] A non-numeric value encountered in cpu_usage:53
+
+[NOTICE] A non-numeric value encountered in cpu_usage:53
+
+        Started Run 2 @ 19:32:57
+        Started Run 3 @ 19:33:13
+        Started Run 4 @ 19:33:29
+        Started Run 5 @ 19:33:46  [Std. Dev: 0.43%]
+
+    Test Results:
+        14.16833281517
+        14.279387950897
+        14.308202981949
+        14.299504995346
+        14.316762208939
+
+    Average: 14.27 Seconds
+
+[NOTICE] Parameter 1 to graphics_event_checker::__post_test_run() expected to be a reference, value given in pts_module_manager:74
+
+[NOTICE] count(): Parameter must be an array or an object that implements Countable in pts_test_run_manager:611
+
+    Would you like to upload the results to OpenBenchmarking.org (Y/n): n

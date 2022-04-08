@@ -1,0 +1,28 @@
+h2 {
+    font-weight: bold;
+}
+
+.leftPart {
+    text-align:center;
+
+    ion-icon {
+        position: inline-block;
+        height: 100%;
+        color: lightgray;
+        font-size: 150px;
+    }
+}
+
+.modify-clinic-button {
+    height: 100%;
+    float: right;
+}
+
+.rightPart {
+    padding: 2% 0 2.5% 0;
+}
+
+.disabled-field {
+    opacity: 0.4;
+}
+

@@ -1,0 +1,15 @@
+Connexion VM
+
+ssh -i "elias_key.pem" ubuntu@ec2-34-203-40-238.compute-1.amazonaws.com
+
+Upload script
+
+scp -i elias_key.pem script.py ubuntu@ec2-3-80-223-177.compute-1.amazonaws.com:/home/ubuntu/
+
+Download results
+
+scp -i elias_key.pem ubuntu@ec2-34-203-40-238.compute-1.amazonaws.com:/home/ubuntu/results.txt ./
+
+
+# Locally only!!!!!
+os.environ["JAVA_HOME"] = "/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/"

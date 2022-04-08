@@ -1,0 +1,20 @@
+ion-app {
+    ion-menu {
+        ion-header {
+            ion-img {
+                height: 75%;
+            }
+        }
+
+        ion-footer {
+            margin-bottom: 30px;
+
+            ion-button {
+                margin: 0 auto;
+                position: relative;
+                display: block;
+                padding: 0 40px;
+            }
+        }
+    }
+}

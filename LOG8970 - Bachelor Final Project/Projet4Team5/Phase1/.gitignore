@@ -1,0 +1,8 @@
+.DS_Store
+client/platforms/
+client/node_modules/
+client/plugins/
+client/resources/ios/
+client/resources/android/
+.idea/
+.vscode/

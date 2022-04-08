@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button *ngIf="!isEditable && !isUpdatingInfo" [defaultHref]="backHref"></ion-back-button>
+            <ion-button *ngIf="isEditable && !isUpdatingInfo" fill="clear" color="danger" (click)="cancelEdit()">Annuler</ion-button>
+        </ion-buttons>
+        <ion-title *ngIf="patient">
+            {{patient.Name}}
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button *ngIf="!isEditable && !isUpdatingInfo" fill="clear" (click)="edit()">Modifier</ion-button>
+            <ion-button *ngIf="isEditable && !isUpdatingInfo" fill="clear" (click)="saveModifications()">Enregistrer</ion-button>
+            <ion-spinner *ngIf="isUpdatingInfo"></ion-spinner>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh(false, $event)" [disabled]="isLoadingMedicalExams">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <app-patient-info *ngIf="clinics" [patient]="patient" [clinics]="clinics" [isEditable]="isEditable" [patientInfoForm]="patientInfoForm"></app-patient-info>
+
+    <div class="container" *ngIf="!isLoadingMedicalExams">
+        <app-medical-exams-list
+            [medicalExams]="allMedicalExams"
+            (createMedicalExamEvent)="showMedicalExamCreationPage()">
+        </app-medical-exams-list>
+    </div>
+
+    <div class="spinner-container" *ngIf="isLoadingMedicalExams">
+        <ion-spinner></ion-spinner>
+    </div>
+    <ion-button *ngIf="isEditable" color="danger" (click)="presentDeletePatientAlert()" class="delete-patient-button">
+        Supprimer définitivement le patient
+    </ion-button>
+</ion-content>

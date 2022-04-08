@@ -1,0 +1,9 @@
+key/
+coverage/
+node_modules/
+dist/
+.idea/
+key/
+*/__pycache__/
+.env
+ai_scripts/models/

@@ -1,0 +1,38 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="backHref"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{form.Title}}</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content #ionContent>
+    <div *ngIf="isLoadingMedicalExamAnswers || isLoadingPreviousMedicalExamAnswers" class="full-over-page">
+        <ion-spinner></ion-spinner>
+    </div>
+
+    <div *ngIf="!isLoadingMedicalExamAnswers && !isLoadingPreviousMedicalExamAnswers">
+        <ion-card *ngIf="form.Template && form.Id !== '4'">
+            <ion-card-content >
+                <div *ngFor="let section of form.Template.form.section | keyvalue: orderedByKeyAsc">
+                    <div *ngFor="let question of section.value | keyvalue: orderedByKeyAsc">
+                        <div *ngIf="section.key == currentSection">
+                            <complete-question [id]="medicalExamId + '/' + form.Id + '/' + question.key" [previousMedicalExamId]="previousMedicalExamId" [question]="question.value"
+                                               [form2displayed]="form.Id === '2' && ['2', '3', '4', '5'].includes(question.key)"
+                                               [form4displayed]="form.Id === '4'"></complete-question>
+                        </div>
+                    </div>
+                </div>
+
+                <ion-button (click)="goBack()">Terminer</ion-button>
+                <ion-button *ngIf="currentSection != form.Template.form.nbSections" (click)="nextPage()">Page suivante</ion-button>
+                <ion-button *ngIf="currentSection != 1" (click)="previousPage()">Page précédente</ion-button>
+            </ion-card-content>
+        </ion-card>
+        <span *ngIf="form.Id !== '4'" class="disclaimer">{{form.Template.disclaimer}}</span>
+    </div>
+    <app-form4 *ngIf="form.Template && form.Id === '4'" [isEditable]="isForm4Editable" [id]="medicalExamId + '/' + form.Id + '/'"></app-form4>
+</ion-content>

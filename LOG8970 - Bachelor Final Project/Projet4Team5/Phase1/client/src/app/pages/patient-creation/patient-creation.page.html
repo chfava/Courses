@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Nouveau patient</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="closeModal()" color="danger" *ngIf="!isSubmitted">Annuler</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">
+                    <form [formGroup]="patientCreationForm" padding>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Prénom</ion-label>
+                            <ion-input formControlName="firstName" autocapitalize="on" spellcheck="false"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Nom de famille</ion-label>
+                            <ion-input formControlName="lastName" autocapitalize="on" spellcheck="false"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Date de naissance</ion-label>
+                            <ion-datetime formControlName="dateOfBirth"
+                                          display-format="DD/MM/YYYY"
+                                          picker-format="DDDD MMMM YYYY"
+                                          cancelText="Annuler"
+                                          doneText="Enregistrer" [monthNames]="frenchMonthNames"
+                                          placeholder="jj/mm/aaaa"
+                                          [pickerOptions]="{enterAnimation: enterAnimation, leaveAnimation: leaveAnimation}"
+                            ></ion-datetime>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Sexe</ion-label>
+                            <ion-select formControlName="gender">
+                                <ion-select-option value="Homme">Homme</ion-select-option>
+                                <ion-select-option value="Femme">Femme</ion-select-option>
+                                <ion-select-option value="Autre">Autre</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Courriel</ion-label>
+                            <ion-input formControlName="email" spellcheck="false"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Adresse</ion-label>
+                            <ion-input formControlName="address" spellcheck="false" autocapitalize="off"></ion-input>
+                        </ion-item>
+                        <ion-button
+                                (click)="onSubmit()"
+                                [disabled]="!patientCreationForm.valid || isSubmitted"
+                                color="primary"
+                                expand="block"
+                                margin>
+                            Créer le patient
+                        </ion-button>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

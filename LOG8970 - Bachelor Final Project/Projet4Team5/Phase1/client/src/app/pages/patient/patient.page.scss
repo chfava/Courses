@@ -1,0 +1,21 @@
+.container {
+    width: 80%;
+    min-width: 320px;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+.spinner-container {
+    width: 100%;
+
+    ion-spinner {
+        display: block;
+        margin: 20px auto auto;
+    }
+}
+
+.delete-patient-button {
+    display: block;
+    width: fit-content;
+    margin: 60px auto;
+}

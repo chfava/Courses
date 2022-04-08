@@ -1,0 +1,72 @@
+.spinnerContainer {
+    width: 100%;
+
+    ion-spinner {
+        display: block;
+        margin: 20px auto auto;
+    }
+}
+
+.large-text {
+    font-size: large;
+}
+
+ion-card-content {
+    border-bottom: solid 1px;
+}
+
+.subtitle {
+    margin-left: 20px;
+}
+
+.form-list-container {
+    width: 80%;
+    min-width: 320px;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.intro {
+    padding: 5% 8%;
+    background-color: #15878a;
+    margin-bottom: 50px;
+
+    h1 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: white;
+
+        .name {
+            font-weight: normal;
+        }
+    }
+
+    h2 {
+        font-size: 26px;
+        font-weight: 400;
+        text-align: right;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    p {
+        font-size: 18px;
+        color: #a6a6a6;
+    }
+}

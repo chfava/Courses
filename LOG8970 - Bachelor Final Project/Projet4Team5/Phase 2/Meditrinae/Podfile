@@ -1,0 +1,30 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.4'
+
+target 'Meditrinae' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Meditrinae
+pod 'lottie-ios', '~> 2.5.0'
+pod 'Charts'
+pod 'SwiftJWT'
+pod 'Alamofire', '~> 4.7'
+pod 'iOSDropDown'
+pod "TinyConstraints"
+pod 'JWTDecode', '~> 2.3'
+pod "SwiftSignatureView"
+pod 'PhoneNumberKit', '~> 3.1'
+pod 'SwiftMessages'
+
+  target 'MeditrinaeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MeditrinaeUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

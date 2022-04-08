@@ -1,0 +1,23 @@
+<ion-searchbar placeholder="Rechercher un patient" (ionChange)="onSearchInputChange($event)"></ion-searchbar>
+
+<div *ngIf="inputValue">
+    <div *ngIf="isStarting">
+        <ion-spinner></ion-spinner>
+    </div>
+    <div *ngIf="!isStarting">
+        <div *ngIf="hasSearchResults()">
+            <ion-card>
+                <ion-list>
+                    <ion-item *ngFor="let patient of searchResults"
+                              routerLink="/patients/{{patient.Id}}"
+                              routerDirection="forward">
+                        <p>{{patient.Name}}</p>
+                    </ion-item>
+                </ion-list>
+            </ion-card>
+        </div>
+        <div *ngIf="!hasSearchResults()">
+            <ion-label class="ion-text-center centered no-result">Patient introuvable.</ion-label>
+        </div>
+    </div>
+</div>

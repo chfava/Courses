@@ -1,0 +1,7 @@
+// Description : construction invalide de la boucle for
+
+a =. 0.0;
+
+for e in 1.0 do{
+    a =. a +. e;
+}

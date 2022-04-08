@@ -1,0 +1,17 @@
+<ion-grid>
+    <ion-row align-items-center>
+        <ion-col size-sm="4" size-xs="12">
+            {{question}}
+        </ion-col>
+        <ion-col size-sm="8" size-xs="12">
+            <ion-item [disabled]="!isEditable">
+                <ion-range (ngModelChange)="onChange($event)" [(ngModel)]="answer" max="{{max}}" min="{{min}}"
+                           pin="true" snaps="true"
+                           step="1">
+                    <ion-label slot="start">{{min}}</ion-label>
+                    <ion-label slot="end">{{max}}</ion-label>
+                </ion-range>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-grid>

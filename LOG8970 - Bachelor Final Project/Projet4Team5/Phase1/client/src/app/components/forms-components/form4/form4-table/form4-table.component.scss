@@ -1,0 +1,45 @@
+.title {
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 5%;
+  width: 90%;
+  line-height: unset;
+  background-color: lightblue;
+}
+
+.superHeader {
+  text-decoration: underline;
+}
+
+.first-header {
+  font-weight: bold;
+}
+
+.row {
+  border-bottom: solid 1px #dce10f;
+}
+
+.row-header {
+  height: 100%;
+  display: block;
+  vertical-align: middle;
+  margin: auto;
+}
+
+.radio-group {
+  display: inherit;
+}
+
+ion-label {
+  margin-left: 0;
+}
+
+ion-col {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+ion-radio {
+  margin-right: 8px;
+  margin-left: 0;
+}

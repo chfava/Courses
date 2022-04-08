@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button fill="clear" color="danger" (click)="navigateBack()">Annuler</ion-button>
+        </ion-buttons>
+        <ion-title>
+            MODE PATIENT
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <h1>Donnez l'appareil à <br><span class="patient-name">{{patientName}}</span></h1>
+        <ion-icon name="happy"></ion-icon>
+        <div class="footer">
+            <signature #signature [name]="patientName"></signature>
+            <ion-button [disabled]="!signature.checkbox.checked" routerLink="/{{url}}/forms">Suivant</ion-button>
+        </div>
+    </div>
+</ion-content>

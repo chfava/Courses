@@ -1,0 +1,554 @@
+m4.xlarge
+
+Step 0 - System Specs
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              2
+On-line CPU(s) list: 0,1
+Thread(s) per core:  2
+Core(s) per socket:  1
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               79
+Model name:          Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+Stepping:            1
+CPU MHz:             2299.942
+BogoMIPS:            4600.10
+Hypervisor vendor:   Xen
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            46080K
+NUMA node0 CPU(s):   0,1
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+
+              total        used        free      shared  buff/cache   available
+Mem:           7975         137        6912           0         925        7571
+Swap:             0           0           0
+
+Step 1 - IO Benchmark
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 20.1289 s, 53.3 MB/s
+
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.9585 s, 56.6 MB/s
+
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.9481 s, 56.7 MB/s
+
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.9504 s, 56.7 MB/s
+
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.9539 s, 56.7 MB/s
+
+Step 3 - IOPS Benchmark
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1193 100 1677829 100 1476122 100  1347 100 2559987 100 +++++ +++
+Latency              6765us      49us      43us    6077us      41us   16026us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               713us     242us    1362us    1075us     502us    2095us
+1.97,1.97,ip-172-31-94-187,1,1581105536,3614M,,1193,100,1677829,100,1476122,100,1347,100,2559987,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,6765us,49us,43us,6077us,41us,16026us,713us,242us,1362us,1075us,502us,2095us
+
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1179 100 1665240 100 1478208 100  1349 100 2537716 100 +++++ +++
+Latency              9565us      39us      47us    6199us      39us   20022us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               153us     164us     196us     543us     164us     154us
+1.97,1.97,ip-172-31-94-187,1,1581105560,3614M,,1179,100,1665240,100,1478208,100,1349,100,2537716,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,9565us,39us,47us,6199us,39us,20022us,153us,164us,196us,543us,164us,154us
+
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1195 100 1676851 100 1478594 100  1353 100 2553994 100 +++++ +++
+Latency              7384us      40us      49us    6070us      39us   16006us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               375us     219us     546us    3118us     267us    1327us
+1.97,1.97,ip-172-31-94-187,1,1581105552,3614M,,1195,100,1676851,100,1478594,100,1353,100,2553994,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,7384us,40us,49us,6070us,39us,16006us,375us,219us,546us,3118us,267us,1327us
+
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1193 100 1670463 100 1475370 100  1347 100 2539781 100 +++++ +++
+Latency              9311us      40us      43us    6057us      40us   16021us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               315us     220us     728us     375us     105us    1065us
+1.97,1.97,ip-172-31-94-187,1,1581108859,3614M,,1193,100,1670463,100,1475370,100,1347,100,2539781,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,9311us,40us,43us,6057us,40us,16021us,315us,220us,728us,375us,105us,1065us
+
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1196 100 1672646 100 1476815  99  1352 100 2559222 100 +++++ +++
+Latency              7365us      65us      64us    6069us      37us   12027us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               319us     204us     643us     212us     292us    1392us
+1.97,1.97,ip-172-31-94-187,1,1581108833,3614M,,1196,100,1672646,100,1476815,99,1352,100,2559222,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,7365us,65us,64us,6069us,37us,12027us,319us,204us,643us,212us,292us,1392us
+
+Step 4 - Memory Benchmark
+stress-ng: info:  [26245] dispatching hogs: 2 vm
+stress-ng: info:  [26245] successful run completed in 60.02s (1 min, 0.02 secs)
+stress-ng: info:  [26245] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [26245]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [26245] vm              4270184     60.01    111.47      8.51     71157.94     35590.80
+
+stress-ng: info:  [26279] dispatching hogs: 2 vm
+stress-ng: info:  [26279] successful run completed in 60.03s (1 min, 0.03 secs)
+stress-ng: info:  [26279] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [26279]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [26279] vm              4270184     60.03    110.92      9.10     71131.82     35578.94
+
+stress-ng: info:  [26306] dispatching hogs: 2 vm
+stress-ng: info:  [26306] successful run completed in 60.03s (1 min, 0.03 secs)
+stress-ng: info:  [26306] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [26306]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [26306] vm              4270184     60.03    111.50      8.52     71139.49     35578.94
+
+stress-ng: info:  [26335] dispatching hogs: 2 vm
+stress-ng: info:  [26335] successful run completed in 60.03s (1 min, 0.03 secs)
+stress-ng: info:  [26335] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [26335]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [26335] vm              4270184     60.03    111.16      8.85     71136.10     35581.90
+
+stress-ng: info:  [26362] dispatching hogs: 2 vm
+stress-ng: info:  [26362] successful run completed in 60.02s (1 min, 0.02 secs)
+stress-ng: info:  [26362] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [26362]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [26362] vm              4270184     60.01    111.63      8.35     71158.08     35590.80
+
+Step 6 - Network Benchmark
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.80.157.34)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by BroadAspect (Ashburn, VA) [0.98 km]: 1.352 ms
+Testing download speed................................................................................
+Download: 571.19 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.16 Mbit/s
+
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.80.157.34)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Whitesky Communications LLC (Ashburn, VA) [0.98 km]: 0.87 ms
+Testing download speed................................................................................
+Download: 579.20 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.16 Mbit/s
+
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.80.157.34)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Whitesky Communications LLC (Ashburn, VA) [0.98 km]: 0.884 ms
+Testing download speed................................................................................
+Download: 579.32 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.16 Mbit/s
+
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.80.157.34)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Whitesky Communications LLC (Ashburn, VA) [0.98 km]: 0.901 ms
+Testing download speed................................................................................
+Download: 579.28 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.16 Mbit/s
+
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.80.157.34)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by BroadAspect (Ashburn, VA) [0.98 km]: 1.534 ms
+Testing download speed................................................................................
+Download: 571.23 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.16 Mbit/s
+
+
+------------------------------------------------Résultat du samedi----------------------------------------------------------------
+
+Step 0 - System Specs
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              2
+On-line CPU(s) list: 0,1
+Thread(s) per core:  2
+Core(s) per socket:  1
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               79
+Model name:          Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+Stepping:            1
+CPU MHz:             2300.055
+BogoMIPS:            4600.16
+Hypervisor vendor:   Xen
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            46080K
+NUMA node0 CPU(s):   0,1
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+
+              total        used        free      shared  buff/cache   available
+Mem:           7975        1293        4936          60        1745        6376
+Swap:             0           0           0
+
+Step 1 - IO Benchmark
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 20.0482 s, 53.6 MB/s
+
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.8588 s, 56.9 MB/s
+
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.8708 s, 56.9 MB/s
+
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.8701 s, 56.9 MB/s
+
+1024+0 records in
+1024+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.8408 s, 57.0 MB/s
+
+Step 3 - IOPS Benchmark
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1194 100 1747187 100 1564631 100  1345 100 2712841 100 +++++ +++
+Latency              6798us      56us      53us    6083us     162us    8007us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               553us     209us     747us    1022us     209us     234us
+
+1.97,1.97,ip-172-31-94-187,1,1581414549,3614M,,1194,100,1747187,100,1564631,100,1345,100,2712841,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,6798us,56us,53us,6083us,162us,8007us,553us,209us,747us,1022us,209us,234us
+
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1183 100 1748585 100 1563505 100  1346 100 2722614  99 +++++ +++
+Latency              9985us      52us      53us    6091us     159us   16023us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               256us     250us    1054us     456us      46us     916us
+
+1.97,1.97,ip-172-31-94-187,1,1581414548,3614M,,1183,100,1748585,100,1563505,100,1346,100,2722614,99,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,9985us,52us,53us,6091us,159us,16023us,256us,250us,1054us,456us,46us,916us
+
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1193  99 1748726 100 1566569 100  1339 100 2724294 100 +++++ +++
+Latency              7879us      52us      39us    6255us      30us   12023us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               872us     199us     374us     717us     113us    1704us
+
+1.97,1.97,ip-172-31-94-187,1,1581414650,3614M,,1193,99,1748726,100,1566569,100,1339,100,2724294,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,7879us,52us,39us,6255us,30us,12023us,872us,199us,374us,717us,113us,1704us
+
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1195  99 1751511 100 1565422 100  1340 100 2717399 100 +++++ +++
+Latency              7100us      52us      55us    6110us      51us   16019us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1137us     204us    1119us     667us     549us    1219us
+
+1.97,1.97,ip-172-31-94-187,1,1581414631,3614M,,1195,99,1751511,100,1565422,100,1340,100,2717399,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,7100us,52us,55us,6110us,51us,16019us,1137us,204us,1119us,667us,549us,1219us
+
+Using uid:0, gid:0.
+Writing a byte at a time...done
+Writing intelligently...done
+Rewriting...done
+Reading a byte at a time...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+ip-172-31-94- 3614M  1190 100 1745402 100 1567309 100  1353 100 2722995 100 +++++ +++
+Latency              8625us      51us      54us    6101us      48us   16021us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+ip-172-31-94-187    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               221us     205us     559us     636us     499us     812us
+1.97,1.97,ip-172-31-94-187,1,1581414569,3614M,,1190,100,1745402,100,1567309,100,1353,100,2722995,100,+++++,+++,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,8625us,51us,54us,6101us,48us,16021us,221us,205us,559us,636us,499us,812us
+
+
+Step 4 - Memory Benchmark
+stress-ng: info:  [30984] dispatching hogs: 2 vm
+stress-ng: info:  [30984] successful run completed in 60.04s (1 min, 0.04 secs)
+stress-ng: info:  [30984] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [30984]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [30984] vm              1386600     60.04     65.03      7.93     23094.50     19004.93
+
+stress-ng: info:  [31018] dispatching hogs: 2 vm
+stress-ng: info:  [31018] successful run completed in 60.04s (1 min, 0.04 secs)
+stress-ng: info:  [31018] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [31018]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [31018] vm              1386600     60.02     83.71      7.43     23100.91     15213.96
+
+stress-ng: info:  [31045] dispatching hogs: 2 vm
+stress-ng: info:  [31045] successful run completed in 60.06s (1 min, 0.06 secs)
+stress-ng: info:  [31045] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [31045]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [31045] vm              1386600     60.05     83.37      7.84     23092.55     15202.28
+
+stress-ng: info:  [31073] dispatching hogs: 2 vm
+stress-ng: info:  [31073] successful run completed in 60.06s (1 min, 0.06 secs)
+stress-ng: info:  [31073] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [31073]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [31073] vm              1386600     60.04     82.20      8.79     23092.87     15239.04
+
+stress-ng: info:  [31152] dispatching hogs: 2 vm
+stress-ng: info:  [31152] successful run completed in 60.05s (1 min, 0.05 secs)
+stress-ng: info:  [31152] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [31152]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [31152] vm              1386600     60.04     82.77      8.33     23094.18     15220.64
+
+Step 5 - Disk Benchmark
+
+/dev/xvda1:
+ Timing cached reads:   13412 MB in  1.99 seconds = 6738.59 MB/sec
+ Timing buffered disk reads: 212 MB in  3.01 seconds =  70.53 MB/sec
+
+
+/dev/xvda1:
+ Timing cached reads:   13420 MB in  1.99 seconds = 6742.24 MB/sec
+ Timing buffered disk reads: 216 MB in  3.02 seconds =  71.41 MB/sec
+
+
+/dev/xvda1:
+ Timing cached reads:   13514 MB in  1.99 seconds = 6790.06 MB/sec
+ Timing buffered disk reads: 212 MB in  3.00 seconds =  70.59 MB/sec
+
+
+/dev/xvda1:
+ Timing cached reads:   13374 MB in  1.99 seconds = 6719.50 MB/sec
+ Timing buffered disk reads: 212 MB in  3.01 seconds =  70.54 MB/sec
+
+
+/dev/xvda1:
+ Timing cached reads:   13306 MB in  1.99 seconds = 6684.51 MB/sec
+ Timing buffered disk reads: 216 MB in  3.02 seconds =  71.43 MB/sec
+
+Step 6 - Network Benchmark
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.82.146.57)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by BroadAspect (Ashburn, VA) [0.98 km]: 1.595 ms
+Testing download speed................................................................................
+Download: 555.39 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.11 Mbit/s
+
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.82.146.57)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Whitesky Communications LLC (Ashburn, VA) [0.98 km]: 0.997 ms
+Testing download speed................................................................................
+Download: 578.95 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.11 Mbit/s
+
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.82.146.57)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by BroadAspect (Ashburn, VA) [0.98 km]: 1.089 ms
+Testing download speed................................................................................
+Download: 573.83 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.11 Mbit/s
+
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.82.146.57)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Whitesky Communications LLC (Ashburn, VA) [0.98 km]: 0.998 ms
+Testing download speed................................................................................
+Download: 578.94 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.10 Mbit/s
+
+Retrieving speedtest.net configuration...
+Testing from Amazon.com (3.82.146.57)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Whitesky Communications LLC (Ashburn, VA) [0.98 km]: 1.245 ms
+Testing download speed................................................................................
+Download: 578.04 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 4.10 Mbit/s
+

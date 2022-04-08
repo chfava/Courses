@@ -1,0 +1,31 @@
+<p [ngClass]="{'showContent': hideContent === false}">
+    {{diagnosisTitle}}
+    <ion-icon name="arrow-down" *ngIf="hideContent === true"></ion-icon>
+    <ion-icon name="arrow-up" *ngIf="hideContent === false"></ion-icon>
+</p>
+<div [ngClass]="{'hideContent': hideContent === true}" (click)="stopPropagation($event)">
+    <div *ngIf="painfulDisorders.length != 0">
+        <p>Désordres douleureux :</p>
+        <ion-list>
+            <ion-item *ngFor="let painfulDisorder of painfulDisorders" lines="none">
+                <ion-label>- {{painfulDisorder}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="rightATMDisorders.length != 0">
+        <p>Désordres ATM droite :</p>
+        <ion-list>
+            <ion-item *ngFor="let rightATMDisorder of rightATMDisorders" lines="none">
+                <ion-label>- {{rightATMDisorder}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="leftATMDisorders.length != 0">
+        <p>Désordres ATM gauche :</p>
+        <ion-list>
+            <ion-item *ngFor="let leftATMDisorder of leftATMDisorders" lines="none">
+                <ion-label>- {{leftATMDisorder}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+</div>

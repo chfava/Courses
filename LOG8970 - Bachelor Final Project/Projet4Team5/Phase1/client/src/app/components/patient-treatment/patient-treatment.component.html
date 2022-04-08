@@ -1,0 +1,71 @@
+<p [ngClass]="{'showContent': hideContent === false}">
+    {{treatmentTitle}}
+    <ion-icon name="arrow-down" *ngIf="hideContent === true"></ion-icon>
+    <ion-icon name="arrow-up" *ngIf="hideContent === false"></ion-icon>
+</p>
+<div [ngClass]="{'hideContent': hideContent === true}" (click)="stopPropagation($event)">
+    <div *ngIf="therapeuticEducations.length != 0">
+        <p>Éducation thérapeutique :</p>
+        <ion-list>
+            <ion-item *ngFor="let therapeuticEducation of therapeuticEducations" lines="none">
+                <ion-label>- {{therapeuticEducation}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="behavioralManagements.length != 0">
+        <p>Gestion comportementale et psychologique :</p>
+        <ion-list>
+            <ion-item *ngFor="let behavioralManagement of behavioralManagements" lines="none">
+                <ion-label>- {{behavioralManagement}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="pharmacologicalTherapies.length != 0">
+        <p>Thérapie pharmacologique :</p>
+        <ion-list>
+            <ion-item *ngFor="let pharmacologicalTherapy of pharmacologicalTherapies" lines="none">
+                <ion-label>- {{pharmacologicalTherapy}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="occlusalOrthoses.length != 0">
+        <p>Orthèses occlusales :</p>
+        <ion-list>
+            <ion-item *ngFor="let occlusalOrthose of occlusalOrthoses" lines="none">
+                <ion-label>- {{occlusalOrthose}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="physiotherapies.length != 0">
+        <p>Physiothérapie :</p>
+        <ion-list>
+            <ion-item *ngFor="let physiotherapy of physiotherapies" lines="none">
+                <ion-label>- {{physiotherapy}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="occlusalTherapies.length != 0">
+        <p>Thérapie occlusale :</p>
+        <ion-list>
+            <ion-item *ngFor="let occlusalTherapy of occlusalTherapies" lines="none">
+                <ion-label>- {{occlusalTherapy}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="injections.length != 0">
+        <p>Injections :</p>
+        <ion-list>
+            <ion-item *ngFor="let injection of injections" lines="none">
+                <ion-label>- {{injection}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="ATMSurgicalApproaches.length != 0">
+        <p>Abord chirurgical de l'ATM :</p>
+        <ion-list>
+            <ion-item *ngFor="let ATMSurgicalApproach of ATMSurgicalApproaches" lines="none">
+                <ion-label>- {{ATMSurgicalApproach}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+</div>

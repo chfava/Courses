@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button *ngIf="!authService.hasPermissions([superAdminRole])">
+            </ion-menu-button>
+            <ion-back-button *ngIf="authService.hasPermissions([superAdminRole])" [defaultHref]="backHref"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <ion-refresher slot="fixed" (ionRefresh)="refresh()">
+            <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+
+        <app-clinic-info></app-clinic-info>
+
+        <div *ngIf="isPageFirstLoading" class="full-over-page">
+            <ion-spinner></ion-spinner>
+        </div>
+
+        <app-employees-of-clinic-list [clinicId]="clinicId" [employeeType]="EmployeeType.Practician" (refreshed)="completeRefresherIfFinished()"></app-employees-of-clinic-list>
+        <app-employees-of-clinic-list [clinicId]="clinicId" [employeeType]="EmployeeType.Secretary" (refreshed)="completeRefresherIfFinished()"></app-employees-of-clinic-list>
+        <app-employees-of-clinic-list [clinicId]="clinicId" [employeeType]="EmployeeType.Admin" (refreshed)="completeRefresherIfFinished()"></app-employees-of-clinic-list>
+    </div>
+</ion-content>

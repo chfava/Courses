@@ -1,0 +1,12 @@
+<div *ngIf="hasClinics()">
+    <ion-card>
+        <ion-list>
+            <ion-item *ngFor="let clinic of clinics" class="clinicRow" routerLink="/admin/{{clinic.Id}}" routerDirection="forward">
+                <p class="clinicName">{{clinic.Name}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</div>
+<div *ngIf="!hasClinics()">
+    <ion-label class="ion-text-center">Aucune clinique n'existe.</ion-label>
+</div>

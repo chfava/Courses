@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd ~/workspace/meditrinae-build/server
+npm install --production
+npm run build
+pm2 restart meditrinae_api
+exit

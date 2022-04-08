@@ -1,0 +1,22 @@
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <h2>{{frenchTranslationOfEmployee}}s</h2>
+        </ion-col>
+        <ion-col>
+            <ion-button fill="clear" color="primary" (click)="showEmployeeCreationPage()" class="add-employee-button">Ajouter</ion-button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+<div *ngIf="hasEmployees()">
+    <ion-card>
+        <ion-list>
+            <ion-item *ngFor="let employee of employees" (click)="showEmployeeUpdatePage(employee)">
+                <p>{{employee.Name + (employee.User === userId ? " (vous)" : "")}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</div>
+<div *ngIf="!hasEmployees()">
+    <ion-label class="ion-text-center">Cette clinique n'a {{frenchTranslationOfNoEmployee}}.</ion-label>
+</div>

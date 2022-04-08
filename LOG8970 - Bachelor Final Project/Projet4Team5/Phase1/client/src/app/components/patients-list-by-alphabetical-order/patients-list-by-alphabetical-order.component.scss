@@ -1,0 +1,36 @@
+ion-spinner {
+    display: block;
+    margin: 0 auto 14px;
+}
+
+ion-label {
+    padding: 0 0 0 16px;
+    color: gray;
+
+    &.no-result {
+        padding: 20px 20px 40px;
+    }
+}
+
+.centered {
+    display: block;
+    padding-right: 16px;
+}
+
+ion-card {
+    margin-top: 8px;
+}
+
+.page-picker {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+
+    ion-button, p {
+        display: inline-block;
+        order: 1;
+        flex: 0 1 auto;
+        font-size: 16px;
+    }
+}

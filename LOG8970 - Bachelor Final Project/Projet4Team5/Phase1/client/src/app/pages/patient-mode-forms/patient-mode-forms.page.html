@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            MODE PATIENT
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="intro" *ngIf="patient && practician">
+        <h2 class="date" [innerHTML]="currentDate"></h2>
+        <h1 class="patient">Patient: <span class="name">{{patient.Name}}</span></h1>
+        <h1 class="practician">Praticien: <span class="name">{{practician.Name}}</span></h1>
+    </div>
+
+    <div class="container">
+        <p class="description">Répondez aux formulaires au meilleur de votre connaissance. <br>N'oubliez pas de soumettre à la fin.</p>
+        <ion-list>
+            <div *ngFor="let form of patientForms">
+                <ion-item *ngIf="form.Id != '4' && form.Id != '5' && form.Id != '14'"
+                          routerLink="/{{router.url}}/form/{{form.id}}" [ngClass]="{'form-answered': isAnswered(form.Id)}">
+                    <p class="form-title">{{form.Title}}</p>
+                </ion-item>
+            </div>
+        </ion-list>
+
+        <div class="footer">
+            <ion-button type="submit" [disabled]="submitIsDisabled" routerLink="/{{router.url}}/post">Suivant</ion-button>
+        </div>
+    </div>
+
+    <div *ngIf="!patient || !practician" class="full-over-page">
+        <ion-spinner></ion-spinner>
+    </div>
+</ion-content>

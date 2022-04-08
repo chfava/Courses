@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PolyBlue v1.0</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="members_string">Développeurs:\n\nCharles-Olivier Favreau\nJulien Gauthier\nFrancis Laframboise</string>
+    <string name="switch_theme_string">SWITCH THEME</string>
+    <string name="scan_string">SCAN</string>
+    <string name="scanning_string">SCANNING</string>
+    <string name="hide_info_string">HIDE</string>
+    <string name="favorites_string">FAVORITES</string>
+    <string name="directions_string">How to get&#10;to marker</string>
+    <string name="share_string">Share</string>
+    <string name="ok_string">OK</string>
+    <string name="device_info_string">Device information</string>
+    <string name="warning_string">Warning:&#10;</string>
+    <string name="favorites_warning_string">You have just removed this device from the favorites&#10;by overwriting with a new scan at the same location.&#10;Move away to stop overwriting old scans.</string>
+</resources>

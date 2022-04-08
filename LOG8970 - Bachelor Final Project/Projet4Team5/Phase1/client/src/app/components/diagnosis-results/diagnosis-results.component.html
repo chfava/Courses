@@ -1,0 +1,27 @@
+<ion-card-content>
+    <h1 class="explicativeText">
+        Voici les diagnostics proposés par l'arbre de décision, ceux proposés par l'intelligence artificielle
+        et ceux entrés par le praticien lors de l'examen clinique. Il est possible de modifier les diagnostics
+        entrés par le praticien lors de l'examen clinique.
+    </h1>
+</ion-card-content>
+
+<ion-card-content *ngIf="decisionTreeResults" (click)="switchContentShowed(Diagnosis.DecisionTree)">
+    <app-patient-diagnosis [diagnosis]="decisionTreeResults" [diagnosisTitle]="'DIAGNOSTICS PROPOSÉS PAR L\'ARBRE DE DÉCISION'"
+        [hideContent]="displayedDiagnosis !== Diagnosis.DecisionTree"></app-patient-diagnosis>
+</ion-card-content>
+
+<ion-card-content *ngIf="aiResults" (click)="switchContentShowed(Diagnosis.AI)">
+    <app-patient-diagnosis [diagnosis]="aiResults" [diagnosisTitle]="'DIAGNOSTICS PROPOSÉS PAR L\'INTELLIGENCE ARTIFICIELLE'"
+        [hideContent]="displayedDiagnosis !== Diagnosis.AI"></app-patient-diagnosis>
+</ion-card-content>
+
+<ion-card-content *ngIf="diagnosisChoices && formAnswers4" (click)="switchContentShowed(Diagnosis.Practician)">
+    <app-patient-diagnosis-proposed-by-practician [diagnosisChoices]="diagnosisChoices" [formAnswers4]="formAnswers4"
+                                                  [hideContent]="displayedDiagnosis !== Diagnosis.Practician"></app-patient-diagnosis-proposed-by-practician>
+</ion-card-content>
+
+<div class="withPadding">
+    <radio-button-question (click)="selectDiagnosis()" [areUsedInForms]="false" [question]="'Quels sont les diagnostics retenus?'"
+        [options]="['Ceux proposés par l\'arbre de décision', 'Ceux proposés par l\'intelligence artificielle', 'Ceux entrés par le praticien']"></radio-button-question>
+</div>

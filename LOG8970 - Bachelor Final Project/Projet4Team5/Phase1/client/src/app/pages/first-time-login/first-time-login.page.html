@@ -1,0 +1,15 @@
+<ion-grid>
+    <ion-row justify-content-center>
+        <ion-col align-self-center size-lg="5" size-md="6" size-xs="12">
+            <div class="welcoming-words">
+                <h1>
+                    Bienvenue {{username}}!
+                </h1>
+                <p>
+                    Pour des raisons de sécurité, nous vous demandons de changer de mot de passe!
+                </p>
+                <change-password (submittedSuccessful)="navigateToNextPage()"></change-password>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>

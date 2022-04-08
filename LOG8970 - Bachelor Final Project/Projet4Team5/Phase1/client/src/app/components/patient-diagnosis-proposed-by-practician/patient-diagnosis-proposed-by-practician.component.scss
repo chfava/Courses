@@ -1,0 +1,14 @@
+.hideContent {
+  display: none;
+}
+
+.showContent {
+  padding-bottom: 13px;
+  margin-bottom: -13px;
+  position: relative;
+  z-index: 1;
+}
+
+ion-icon {
+  float: right;
+}

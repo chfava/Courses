@@ -1,0 +1,13 @@
+.question {
+    padding-top: 15px;
+}
+
+.yes-no-question {
+    ion-radio-group {
+        display: inherit;
+    }
+
+    ion-radio {
+        margin: 5px;
+    }
+}

@@ -1,0 +1,13 @@
+<ion-grid>
+    <ion-row>
+        <ion-col class="question" size-sm="4" size-xs="12">
+            {{question}}
+        </ion-col>
+        <ion-col *ngFor="let field of fields; let i = index" size-sm="4" size-xs="6">
+            <ion-item [disabled]="!isEditable">
+                <ion-input (ngModelChange)="changed($event, i)" [(ngModel)]="answer[i]" min="0" type="number"></ion-input>
+                <ion-label>{{field}}</ion-label>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-grid>

@@ -1,0 +1,49 @@
+<div [ngClass]="{'hidden': !isInitialized || !displayQuestion()}">
+    <checkbox-question *ngIf="question.checkbox" [id]="id" [options]="question.checkbox"
+                       [question]="question.question"></checkbox-question>
+    <radio-button-question *ngIf="question.radio" [question]="question.question" [options]="question.radio"
+                           [id]="id" [form4displayed]="form4displayed"></radio-button-question>
+    <long-text-question *ngIf="question.longText" [question]="question.question" [id]="id"></long-text-question>
+    <img-question *ngIf="question.imgSrc" [question]="question.question" [imgSrc]="question.imgSrc"
+                  [imgWidth]="question.imgWidth" [imgHeight]="question.imgHeight" [nbRows]="question.nbRows"
+                  [nbCols]="question.nbCols" [id]="id"></img-question>
+    <input-question *ngIf="question.inputType" [question]="question.question" [inputType]="question.inputType"
+                    [id]="id"></input-question>
+    <slider-question *ngIf="question.slider" [question]="question.question" [min]="question.min" [max]="question.max"
+                     [id]="id"></slider-question>
+    <dropdown-question *ngIf="question.dropdown" [question]="question.question" [options]="question.dropdown"
+                       [id]="id"></dropdown-question>
+    <numerical-question *ngIf="question.numerical" [question]="question.question" [fields]="question.numerical"
+                        [id]="id"></numerical-question>
+    <automatic-sum *ngIf="question.automaticSum" [question]="question.question" [sumIds]="question.automaticSum"
+                   [id]="id"></automatic-sum>
+    <complete-question *ngIf="question.linkedQuestion" [question]="question.linkedQuestion"
+                       [id]="id + 'L'"></complete-question>
+    <div *ngIf="question.subquestion && !form2displayed">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">
+                    {{question.question}}
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div class="subquestion" *ngFor="let subquestion of question.subquestion | keyvalue: orderedByKeyAsc">
+            <complete-question *ngIf="isInitialized && displaySubquestion(subquestion.key)" [id]="id + '/' + subquestion.key"
+                               [previousMedicalExamId]="previousMedicalExamId" [question]="subquestion.value"
+                               [form4displayed]="form4displayed"></complete-question>
+        </div>
+    </div>
+    <div *ngIf="question.subquestion && form2displayed">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">{{question.question}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col sizeLg="6" size="12" class="subquestion"
+                         *ngFor="let subquestion of question.subquestion | keyvalue: orderedByKeyAsc">
+                    <complete-question [id]="id + '/' + subquestion.key" [question]="subquestion.value"></complete-question>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</div>

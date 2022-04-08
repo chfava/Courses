@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{modalTitle}}</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="closeModal()" color="danger" *ngIf="!isSubmitted">Annuler</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">
+                    <form [formGroup]="employeeCreationForm" padding (keydown.enter)="onSubmit()">
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Prénom</ion-label>
+                            <ion-input formControlName="firstName" autocapitalize="on"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Nom de famille</ion-label>
+                            <ion-input formControlName="lastName" autocapitalize="on"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Nom d'utilisateur</ion-label>
+                            <ion-input formControlName="username"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                            <ion-label position="stacked">Mot de passe</ion-label>
+                            <ion-input formControlName="password"></ion-input>
+                        </ion-item>
+                        <ion-item *ngIf="employeeType === EmployeeType.Practician">
+                            <ion-label position="stacked">Téléphone</ion-label>
+                            <ion-input formControlName="phone" type="tel"></ion-input>
+                        </ion-item>
+                        <ion-button (click)="onSubmit()" [disabled]="!employeeCreationForm.valid || isSubmitted"
+                            color="primary" expand="block" margin>
+                            Créer
+                        </ion-button>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
